@@ -6,7 +6,19 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Header styles */
+        /* Reset body and html height to avoid extra whitespace */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Ensure the page content covers the full height */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
         header {
             position: fixed;
             top: 0;
@@ -33,8 +45,17 @@
         }
 
         main {
+            flex: 1;
             margin-top: 60px; /* To avoid content being hidden under the header */
             padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -55,28 +76,11 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: #333; color: white; text-align: center; font-size: 12px; padding: 5px; margin-top: 20px;">
+    <footer>
         <p>&copy; 2024 My Custom Website</p>
     </footer>
 
-    <!-- JavaScript for dynamic header -->
-    <script>
-        let lastScrollTop = 0; // Track the last scroll position
-        const header = document.getElementById('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScrollTop > lastScrollTop) {
-                // Scrolling down: hide the header
-                header.style.top = '-60px';
-            } else {
-                // Scrolling up: show the header
-                header.style.top = '0';
-            }
-
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Avoid negative values
-        });
-    </script>
+    <!-- Link to JavaScript File -->
+    <script src="/assets/js/header.js"></script>
 </body>
 </html>
