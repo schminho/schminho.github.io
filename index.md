@@ -5,18 +5,6 @@ title: Home
 
 # Welcome to My Custom Website
 
-## Navigation
-<div style="text-align: center; margin-bottom: 20px;">
-  <a href="/" style="margin: 0 15px;">Home</a>
-  <a href="/about/" style="margin: 0 15px;">About</a>
-  <a href="/contact/" style="margin: 0 15px;">Contact</a>
-  <a href="/blog/" style="margin: 0 15px;">Blog</a>
-</div>
-
----
-
-## Main Content
-
 Welcome to the homepage of my custom website! Here is some dummy content to demonstrate the layout.
 
 ### Section 1: Introduction
