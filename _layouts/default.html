@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-            <a href="/blog/">Blog</a>
+    <!-- Sticky Header -->
+    <header style="position: sticky; top: 0; background: #333; color: white; padding: 10px; z-index: 1000;">
+        <nav style="text-align: center;">
+            <a href="/" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="/about/" style="color: white; margin: 0 15px; text-decoration: none;">About</a>
+            <a href="/contact/" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+            <a href="/blog/" style="color: white; margin: 0 15px; text-decoration: none;">Blog</a>
         </nav>
     </header>
-    <main>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
         {{ content }}
     </main>
-    <footer>
+
+    <!-- Normal Footer -->
+    <footer style="background: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
         <p>&copy; 2024 My Custom Website</p>
     </footer>
 </body>
