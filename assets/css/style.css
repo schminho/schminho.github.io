@@ -30,11 +30,10 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background: #333;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    font-size: 12px; /* Small text */
+    padding: 5px;    /* Compact padding */
+    margin-top: 20px; /* Space above footer */
 }
