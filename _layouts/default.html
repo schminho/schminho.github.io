@@ -5,26 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+            transition: top 0.3s; /* Smooth transition for hiding/showing */
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-top: 60px; /* To avoid content being hidden under the header */
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Sticky Header -->
-    <header style="position: sticky; top: 0; background: #333; color: white; padding: 10px; z-index: 1000;">
-        <nav style="text-align: center;">
-            <a href="/" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
-            <a href="/about/" style="color: white; margin: 0 15px; text-decoration: none;">About</a>
-            <a href="/contact/" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
-            <a href="/blog/" style="color: white; margin: 0 15px; text-decoration: none;">Blog</a>
+    <!-- Sticky and dynamic header -->
+    <header id="header">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/blog/">Blog</a>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main style="padding: 20px;">
+    <main>
         {{ content }}
     </main>
 
-    <!-- Normal Footer -->
+    <!-- Footer -->
     <footer style="background: #333; color: white; text-align: center; font-size: 12px; padding: 5px; margin-top: 20px;">
         <p>&copy; 2024 My Custom Website</p>
     </footer>
+
+    <!-- JavaScript for dynamic header -->
+    <script>
+        let lastScrollTop = 0; // Track the last scroll position
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down: hide the header
+                header.style.top = '-60px';
+            } else {
+                // Scrolling up: show the header
+                header.style.top = '0';
+            }
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Avoid negative values
+        });
+    </script>
 </body>
 </html>
