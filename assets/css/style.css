@@ -4,38 +4,53 @@ body {
     color: #333333;
     margin: 0;
     padding: 0;
-    background-color: #EDEDED; /* Light gray background outside the container */
+    background-color: #EDEDED; /* Light gray background */
     display: flex;
     justify-content: center; /* Center the container horizontally */
 }
 
 /* Container styling */
 .container {
-    width: 80%; /* Adjusted width to 80% of the total viewport */
-    max-width: 1920px; /* Optional: Limit the width to the maximum you want */
+    width: 100%; /* Full width */
+    max-width: 1920px; /* Cap width at 1920px */
     margin: 0 auto; /* Center the container */
-    background-color: #FFFFFF; /* Ensure the content area remains white */
+    background-color: #FFFFFF; /* Content background color */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Maintain full viewport height */
+    min-height: 100vh; /* Full viewport height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+/* Content area inside the container */
+.content {
+    width: 80%; /* Constrain content to 80% */
+    margin: 0 auto; /* Center content within the container */
 }
 
 /* Header Styling */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #003300; /* Dark green */
+    background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
-    transition: top 300ms ease-in-out, opacity 300ms ease-in-out; /* Matches JS fade duration */
+    position: fixed;
+    width: 100%; /* Full width for the header */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation bar styling */
 nav {
+    width: 100%; /* Full width for the nav */
+    margin: 0 auto; /* Center the nav */
     display: flex;
-    justify-content: flex-start; /* Left-aligned navigation */
+    justify-content: center; /* Center nav items container */
     padding: 1rem;
+}
+
+/* Nav items container */
+.nav-items {
+    width: 80%; /* Constrain nav items to 80% */
+    display: flex;
+    justify-content: flex-start; /* Left-align nav items */
 }
 
 nav a {
@@ -43,18 +58,18 @@ nav a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease; /* Only underline on hover */
+    transition: border-bottom 0.3s ease; /* Smooth underline effect */
 }
 
 nav a:hover {
-    border-bottom: 2px solid #FFFFFF; /* White underline */
+    border-bottom: 2px solid #FFFFFF; /* White underline on hover */
 }
 
 /* Main content area */
 main {
     flex: 1; /* Fill remaining space */
-    padding: 1rem; /* Adjust padding as needed */
-    margin-top: 60px; /* Reduced margin to start closer to the navigation */
+    padding: 2rem; /* Add padding around content */
+    margin-top: 80px; /* Height of the header */
 }
 
 /* Content Links Styling */
