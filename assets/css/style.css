@@ -90,7 +90,7 @@ main {
 /* Teaser Section */
 .teaser {
     display: flex;
-    flex-direction: column; /* Stack image and content vertically */
+    flex-direction: column; /* Default: Stack image and text vertically */
     align-items: flex-start; /* Left-align content */
     gap: 1rem; /* Spacing between elements */
     padding: 1.5rem;
@@ -146,6 +146,24 @@ main {
 
 .teaser-button:hover {
     background-color: #002600; /* Slightly darker green */
+}
+
+/* Responsive Styling for Larger Viewports */
+@media (min-width: 1024px) {
+    .teaser {
+        flex-direction: row; /* Place image on the left and text on the right */
+        align-items: center; /* Vertically align image and content */
+        gap: 2rem; /* Increase spacing between image and content */
+    }
+
+    .teaser-image {
+        width: 40%; /* Constrain image to 40% of the teaser width */
+        max-height: none; /* Remove height limit for larger screens */
+    }
+
+    .teaser-content {
+        width: 60%; /* Allow content to take up the remaining 60% */
+    }
 }
 
 /* Responsive Styling for Smaller Viewports */
