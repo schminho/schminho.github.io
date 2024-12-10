@@ -1,0 +1,52 @@
+/* Header styling */
+header {
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
+    position: fixed;
+    width: 100%; /* Full width for the header */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Ensure height by adding padding */
+    box-sizing: border-box; /* Consistent box model */
+}
+
+/* Navigation bar styling */
+nav {
+    width: 100%; /* Full width for the nav */
+    background-color: #003300; /* Dark green background */
+    padding: 0; /* Remove extra padding */
+    box-sizing: border-box; /* Consistent box model */
+}
+
+/* Nav items container */
+.nav-items {
+    width: 80%; /* Constrain nav items to 80% of the nav bar */
+    margin: 0 auto; /* Align nav items with the content */
+    display: flex;
+    justify-content: flex-start; /* Left-align nav items */
+    gap: 1rem; /* Add spacing between nav items */
+}
+
+/* Individual nav links */
+nav a {
+    color: #FFFFFF; /* White links */
+    text-decoration: none;
+    padding: 0.5rem 0; /* Adjust vertical padding */
+    position: relative; /* Needed for positioning the pseudo-element */
+}
+
+nav a::after {
+    content: ""; /* Creates the underline */
+    position: absolute;
+    left: 0; /* Start underline exactly below the text */
+    right: 0; /* Ensure no additional width */
+    bottom: 0; /* Position underline at the very bottom */
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background-color: #FFFFFF; /* White underline */
+    transition: width 0.3s ease; /* Smooth animation for underline */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand underline to match the text's width */
+}
