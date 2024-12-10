@@ -199,19 +199,19 @@ footer {
         flex-direction: row; /* Image on the left and text on the right */
         align-items: center; /* Vertically align image and content */
         gap: 2rem; /* Increase spacing between image and content */
-        width: 50%; /* Limit width to 50% of the content area */
-        margin: 2rem auto; /* Center horizontally */
+        width: calc(80% * 2 / 3); /* Teaser occupies 2/3 of the 80% content area */
+        margin: 2rem 0; /* Left-aligned within the content area */
     }
 
     .teaser-image {
         width: 40%; /* Constrain image to 40% of the teaser width */
-        max-height: none; /* Remove height limit for larger screens */
     }
 
     .teaser-content {
         width: 60%; /* Allow content to take up the remaining 60% */
     }
 }
+
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .teaser {
