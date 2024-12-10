@@ -4,54 +4,110 @@ body {
     color: #333333;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #EDEDED; /* Light gray background */
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
 }
 
-/* Header Styling */
+/* General container styling */
+.container {
+    width: 100%; /* Full width */
+    max-width: 1920px; /* Cap width at 1920px */
+    margin: 0 auto; /* Center container */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Ensure consistent padding and border calculations */
+}
+
+/* Header styling */
 header {
-    background-color: #004400; /* Dark green background */
-    color: #FFD700; /* Gold text */
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
     position: fixed;
-    width: 100%;
-    top: 0;
+    width: 100%; /* Full width for the header */
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Ensure height by adding padding */
+    box-sizing: border-box; /* Consistent box model */
 }
 
+/* Navigation bar styling */
 nav {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
+    width: 100%; /* Full width for the nav */
+    background-color: #003300; /* Dark green background */
+    padding: 0; /* Remove extra padding */
+    box-sizing: border-box; /* Consistent box model */
 }
 
+/* Nav items container */
+.nav-items {
+    width: 80%; /* Constrain nav items to 80% of the nav bar */
+    margin: 0 auto; /* Align nav items with the content */
+    display: flex;
+    justify-content: flex-start; /* Left-align nav items */
+}
+
+/* Individual nav links */
 nav a {
-    color: #FFD700; /* Gold links */
+    color: #FFFFFF; /* White links */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 2px solid transparent;
+    position: relative; /* Needed for pseudo-element */
 }
 
-nav a:hover {
-    color: #FFFFFF; /* White on hover */
-    border-bottom: 2px solid #FFD700; /* Gold underline */
+nav a::after {
+    content: ""; /* Creates the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Positioned at the bottom of the text */
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background-color: #FFFFFF; /* White underline */
+    transition: width 0.3s ease; /* Smooth animation for underline */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand underline to full word length */
 }
 
 /* Main content area */
 main {
-    padding: 2rem;
+    flex: 1; /* Fill remaining space */
+    padding: 2rem 0; /* Adjust padding for content area */
     margin-top: 80px; /* Height of the header */
+    box-sizing: border-box; /* Ensure padding and borders are calculated consistently */
+}
+
+/* Content inside the container */
+.content {
+    width: 80%; /* Constrain content to 80% */
+    margin: 0 auto; /* Align content with the nav items */
+    box-sizing: border-box; /* Consistent box model */
+}
+
+/* Content Links Styling */
+main a {
+    color: #003300; /* Dark green for links */
+    text-decoration: none;
+    border-bottom: 1px solid #003300; /* Subtle underline */
+    transition: color 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+main a:hover {
+    color: #FFFFFF; /* White text on hover */
+    background-color: #003300; /* Dark green background for contrast */
+    border-bottom: 1px solid #FFFFFF; /* Matching underline */
 }
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #004400; /* Dark green for headings */
+    color: #003300; /* Dark green for headings */
 }
 
 /* Button styling */
 button {
-    background-color: #004400; /* Dark green */
-    color: #FFFFFF;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
     border: none;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
@@ -60,14 +116,129 @@ button {
 }
 
 button:hover {
-    background-color: #002200; /* Even darker green */
+    background-color: #002600; /* Slightly darker green on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Footer Styling */
+/* Footer styling */
 footer {
-    background-color: #004400; /* Dark green background */
-    color: #FFD700; /* Gold text */
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Teaser Section */
+.teaser {
+    display: flex;
+    flex-direction: column; /* Default: Stack image and text vertically */
+    align-items: flex-start; /* Left-align content */
+    gap: 1rem; /* Spacing between elements */
+    padding: 1.5rem;
+    background-color: #FFFFFF; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    margin: 2rem 0; /* Spacing from other sections */
+    width: 100%; /* Default: Full width for small and medium viewports */
+    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+}
+
+/* Teaser Image */
+.teaser-image {
+    width: 100%; /* Full width within the teaser */
+    max-height: 200px; /* Constrain image height */
+    border-radius: 8px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensure the image scales nicely */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Teaser Content */
+.teaser-content {
+    flex: 1; /* Allow content to grow */
+}
+
+/* Teaser Title */
+.teaser-title {
+    font-size: 1.5rem;
+    color: #003300; /* Dark green */
+    margin: 0 0 1rem; /* Spacing below the title */
+}
+
+/* Teaser Description */
+.teaser-description {
+    font-size: 1rem;
+    color: #555555; /* Subtle text color for the description */
+    margin: 0 0 1.5rem; /* Spacing below the description */
+    line-height: 1.5;
+}
+
+/* Teaser Button */
+.teaser-button {
+    display: inline-block;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the button */
+}
+
+.teaser-button:hover {
+    background-color: #002600; /* Slightly darker green */
+}
+
+/* Responsive Layouts for Teaser */
+@media (min-width: 1024px) {
+    .teaser {
+        flex-direction: row; /* Image on the left and text on the right */
+        align-items: center; /* Vertically align image and content */
+        gap: 2rem; /* Increase spacing between image and content */
+        width: 50%; /* Limit width to 50% of the content area */
+        margin: 2rem auto; /* Center horizontally */
+    }
+
+    .teaser-image {
+        width: 40%; /* Constrain image to 40% of the teaser width */
+        max-height: none; /* Remove height limit for larger screens */
+    }
+
+    .teaser-content {
+        width: 60%; /* Allow content to take up the remaining 60% */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .teaser {
+        flex-direction: row; /* Image on the left, text on the right */
+        align-items: center; /* Vertically align image and content */
+        gap: 2rem; /* Increase spacing between image and content */
+        width: 100%; /* Full width for the teaser */
+    }
+
+    .teaser-image {
+        width: 40%; /* Constrain image to 40% of the teaser width */
+    }
+
+    .teaser-content {
+        width: 60%; /* Allow content to take up the remaining 60% */
+    }
+}
+
+@media (max-width: 768px) {
+    .teaser {
+        flex-direction: column; /* Stack image and text vertically */
+        width: 100%; /* Teaser takes up 100% of the content area */
+    }
+
+    .teaser-title {
+        font-size: 1.25rem; /* Slightly smaller title for better layout */
+    }
+
+    .teaser-description {
+        font-size: 0.9rem; /* Adjust description size for smaller screens */
+    }
 }
