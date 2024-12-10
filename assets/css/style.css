@@ -6,19 +6,22 @@ body {
     padding: 0;
     background-color: #FFFFFF;
     display: flex;
-    justify-content: center; /* Center the entire site horizontally */
+    justify-content: center; /* Center the project horizontally */
 }
 
 .container {
     width: 1920px; /* Absolute width for the project */
-    margin: 0 auto; /* Ensure centered alignment */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    min-height: 100vh; /* Make sure the container fills the viewport height */
 }
 
 /* Header Styling */
 header {
     background-color: #003300; /* Slightly lighter green background */
     color: #FFFFFF; /* White text */
-    position: fixed;
+    position: relative; /* Relative to container */
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -44,6 +47,7 @@ nav a:hover {
 
 /* Main content area */
 main {
+    flex: 1; /* Ensures the main content takes up the available space */
     padding: 2rem;
     margin-top: 80px; /* Height of the header */
 }
@@ -75,18 +79,6 @@ footer {
     color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
-}
-
-/* Link styling in the content area */
-main a {
-    color: #003300; /* Slightly lighter green for links */
-    text-decoration: none;
-    border-bottom: 1px solid #003300; /* Subtle underline */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-}
-
-main a:hover {
-    color: #FFFFFF; /* White on hover */
-    background-color: #F0F0F0; /* Light gray background */
-    border-bottom: 1px solid #FFFFFF; /* Matching underline */
+    width: 100%; /* Ensure footer spans the full container width */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
