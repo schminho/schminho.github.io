@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let lastScrollTop = 0;
+    let lastScrollTop = 0; // Tracks the last scroll position
     const header = document.querySelector("header");
-    const tolerance = 10; // Small tolerance to avoid flickering
+    const tolerance = 50; // Distance in pixels before triggering hide/show
     const fadeDuration = 300; // Duration for fade effect in milliseconds
     let isHidden = false; // Tracks if the header is currently hidden
 
@@ -11,19 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", () => {
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScrollTop > lastScrollTop + tolerance && !isHidden) {
-            // Scrolling down: hide the header
-            header.style.top = "-80px";
-            header.style.opacity = "0";
-            isHidden = true;
-        } else if (currentScrollTop < lastScrollTop - tolerance && isHidden) {
-            // Scrolling up: show the header
-            header.style.top = "0";
-            header.style.opacity = "1";
-            isHidden = false;
+        if (Math.abs(currentScrollTop - lastScrollTop) > tolerance) {
+            if (currentScrollTop > lastScrollTop && !isHidden) {
+                // Scrolling down: hide the header
+                header.style.top = "-80px";
+                header.style.opacity = "0";
+                isHidden = true;
+            } else if (currentScrollTop < lastScrollTop && isHidden) {
+                // Scrolling up: show the header
+                header.style.top = "0";
+                header.style.opacity = "1";
+                isHidden = false;
+            }
+            lastScrollTop = currentScrollTop; // Update the last scroll position
         }
-
-        // Update the last scroll position
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
     });
 });
