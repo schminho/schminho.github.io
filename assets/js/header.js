@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTop = 0;
     const header = document.querySelector("header");
-    const tolerance = 20; // Tolerance for smoother behavior
+    const tolerance = 10; // Small tolerance to avoid flickering
     const fadeDuration = 300; // Duration for fade effect in milliseconds
-    let isHidden = false; // Track if the header is hidden
+    let isHidden = false; // Tracks if the header is currently hidden
 
-    // Apply initial styles for smooth fade transitions
+    // Apply smooth fade and slide transitions
     header.style.transition = `top ${fadeDuration}ms ease-in-out, opacity ${fadeDuration}ms ease-in-out`;
 
     window.addEventListener("scroll", () => {
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isHidden = false;
         }
 
+        // Update the last scroll position
         lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
     });
 });
