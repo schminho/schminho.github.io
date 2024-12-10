@@ -43,5 +43,5 @@ Here's a list of some dummy features:
 - Feature 3: Responsive layout
 
 ### Section 3: Call to Action
-Ready to get started? Visit the [Porjects page](/projects/) to learn more or [Contact us](/about/) if you have any questions!
+Ready to get started? Visit the [Projects page](/projects/) to learn more or [Contact us](/about/) if you have any questions!
 
