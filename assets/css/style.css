@@ -22,12 +22,12 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #003300; /* Dark green background */
-    color: #FFFFFF; /* White text */
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
     transition: top 300ms ease-in-out, opacity 300ms ease-in-out; /* Matches JS fade duration */
 }
 
