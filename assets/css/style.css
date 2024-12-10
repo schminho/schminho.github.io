@@ -7,18 +7,17 @@ body {
     background-color: #FFFFFF;
 }
 
-/* Fixed and animated header */
+/* Header Styling */
 header {
+    background-color: #004400; /* Dark green background */
+    color: #FFD700; /* Gold text */
     position: fixed;
     width: 100%;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
     top: 0;
-    transition: top 0.3s ease-in-out; /* Smooth hide/show transition */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation bar styling */
 nav {
     display: flex;
     justify-content: space-around;
@@ -26,15 +25,15 @@ nav {
 }
 
 nav a {
-    color: #006400; /* Dark green for links */
+    color: #FFD700; /* Gold links */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transitions */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-    color: #FFD700; /* Gold on hover */
+    color: #FFFFFF; /* White on hover */
     border-bottom: 2px solid #FFD700; /* Gold underline */
 }
 
@@ -46,12 +45,12 @@ main {
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #006400; /* Dark green for headings */
+    color: #004400; /* Dark green for headings */
 }
 
 /* Button styling */
 button {
-    background-color: #006400; /* Dark green */
+    background-color: #004400; /* Dark green */
     color: #FFFFFF;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -61,27 +60,14 @@ button {
 }
 
 button:hover {
-    background-color: #004400; /* Even darker green */
+    background-color: #002200; /* Even darker green */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Footer styling */
+/* Footer Styling */
 footer {
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: #004400; /* Dark green background */
+    color: #FFD700; /* Gold text */
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
-}
-
-/* Link styling within the content */
-a {
-    color: #006400; /* Dark green */
-    text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-a:hover {
-    color: #FFD700; /* Gold on hover */
-    text-decoration: underline;
 }
