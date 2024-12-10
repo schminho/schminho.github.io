@@ -4,24 +4,27 @@ body {
     color: #333333;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #EDEDED; /* Light gray background outside the container */
     display: flex;
-    justify-content: center; /* Center the project horizontally */
+    justify-content: center; /* Center the container horizontally */
 }
 
+/* Container styling */
 .container {
-    width: 1920px; /* Absolute width for the project */
+    width: 1920px; /* Fixed width */
     margin: 0 auto; /* Center the container */
+    background-color: #FFFFFF; /* White content background */
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    min-height: 100vh; /* Make sure the container fills the viewport height */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Full viewport height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for elevation */
 }
 
 /* Header Styling */
 header {
-    background-color: #003300; /* Slightly lighter green background */
+    background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
-    position: relative; /* Relative to container */
+    position: relative;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,7 +32,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: flex-start; /* Align navigation to the left */
+    justify-content: flex-start; /* Left-aligned navigation */
     padding: 1rem;
 }
 
@@ -47,19 +50,33 @@ nav a:hover {
 
 /* Main content area */
 main {
-    flex: 1; /* Ensures the main content takes up the available space */
-    padding: 2rem;
+    flex: 1; /* Fill remaining space */
+    padding: 2rem; /* Add padding around content */
     margin-top: 80px; /* Height of the header */
+}
+
+/* Content Links Styling */
+main a {
+    color: #003300; /* Dark green for links */
+    text-decoration: none;
+    border-bottom: 1px solid #003300; /* Subtle underline */
+    transition: color 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+main a:hover {
+    color: #FFFFFF; /* White text on hover */
+    background-color: #003300; /* Dark green background for contrast */
+    border-bottom: 1px solid #FFFFFF; /* Matching underline */
 }
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #003300; /* Slightly lighter green for headings */
+    color: #003300; /* Dark green for headings */
 }
 
 /* Button styling */
 button {
-    background-color: #003300; /* Slightly lighter green */
+    background-color: #003300; /* Dark green */
     color: #FFFFFF; /* White text */
     border: none;
     padding: 0.75rem 1.5rem;
@@ -75,10 +92,10 @@ button:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #003300; /* Slightly lighter green background */
+    background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
-    width: 100%; /* Ensure footer spans the full container width */
+    width: 100%;
     box-sizing: border-box; /* Include padding in width calculations */
 }
