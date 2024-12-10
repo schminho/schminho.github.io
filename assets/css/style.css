@@ -49,10 +49,12 @@ nav {
 /* Nav items container */
 .nav-items {
     width: 80%; /* Constrain nav items to 80% */
+    margin: 0; /* Ensure no additional margin */
     display: flex;
     justify-content: flex-start; /* Left-align nav items */
 }
 
+/* Individual nav links */
 nav a {
     color: #FFFFFF; /* White links */
     text-decoration: none;
@@ -70,6 +72,11 @@ main {
     flex: 1; /* Fill remaining space */
     padding: 2rem; /* Add padding around content */
     margin-top: 80px; /* Height of the header */
+}
+
+.content {
+    width: 80%; /* Constrain content to 80% of the container */
+    margin: 0 auto; /* Center content within the container */
 }
 
 /* Content Links Styling */
