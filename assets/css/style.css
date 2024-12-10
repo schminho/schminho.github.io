@@ -122,6 +122,70 @@ button:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Teaser Section */
+.teaser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Spacing between image and content */
+    padding: 2rem;
+    background-color: #FFFFFF; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    margin: 2rem auto;
+    width: 80%; /* Constrain width to 80% of the container */
+    max-width: 1200px; /* Maximum width for large screens */
+    box-sizing: border-box;
+}
+
+/* Teaser Image */
+.teaser-image {
+    flex: 1;
+    max-width: 300px; /* Constrain image width */
+    border-radius: 8px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensure the image scales nicely */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Teaser Content */
+.teaser-content {
+    flex: 2;
+}
+
+/* Teaser Title */
+.teaser-title {
+    font-size: 1.8rem;
+    color: #003300; /* Dark green */
+    margin: 0 0 1rem; /* Spacing below the title */
+}
+
+/* Teaser Description */
+.teaser-description {
+    font-size: 1rem;
+    color: #555555; /* Subtle text color for the description */
+    margin: 0 0 1.5rem; /* Spacing below the description */
+    line-height: 1.5;
+}
+
+/* Teaser Button */
+.teaser-button {
+    display: inline-block;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the button */
+}
+
+.teaser-button:hover {
+    background-color: #002600; /* Slightly darker green */
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
 /* Footer styling */
 footer {
     background-color: #003300; /* Dark green background */
