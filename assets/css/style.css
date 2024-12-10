@@ -11,13 +11,14 @@ body {
 
 /* Container styling */
 .container {
-    width: 1920px; /* Fixed width */
+    width: 80%; /* Adjusted width to 80% of the total viewport */
+    max-width: 1920px; /* Optional: Limit the width to the maximum you want */
     margin: 0 auto; /* Center the container */
-    background-color: #FFFFFF; /* White content background */
+    background-color: #FFFFFF; /* Ensure the content area remains white */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Full viewport height */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for elevation */
+    flex-direction: column;
+    min-height: 100vh; /* Maintain full viewport height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
 }
 
 /* Header Styling */
