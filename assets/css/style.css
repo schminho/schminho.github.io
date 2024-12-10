@@ -199,7 +199,7 @@ footer {
         flex-direction: row; /* Image on the left and text on the right */
         align-items: center; /* Vertically align image and content */
         gap: 2rem; /* Increase spacing between image and content */
-        width: calc(80% * 2 / 3); /* Teaser occupies 2/3 of the 80% content area */
+        width: calc(100% * 2 / 3); /* Teaser occupies 2/3 of the 100% content area */
         margin: 2rem 0; /* Left-aligned within the content area */
     }
 
