@@ -1,16 +1,18 @@
-let lastScrollTop = 0; // Track the last scroll position
-const header = document.getElementById('header');
+document.addEventListener("DOMContentLoaded", function() {
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
 
-window.addEventListener('scroll', () => {
-    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", () => {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScrollTop > lastScrollTop) {
-        // Scrolling down: hide the header
-        header.style.top = '-60px';
-    } else {
-        // Scrolling up: show the header
-        header.style.top = '0';
-    }
+        if (currentScrollTop > lastScrollTop) {
+            // Scrolling down: hide the header
+            header.style.top = "-80px";
+        } else {
+            // Scrolling up: show the header
+            header.style.top = "0";
+        }
 
-    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Avoid negative values
+        lastScrollTop = Math.max(currentScrollTop, 0); // Prevent negative values
+    });
 });
