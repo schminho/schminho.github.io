@@ -51,15 +51,16 @@ nav {
 nav a {
     color: #FFFFFF; /* White links */
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    position: relative; /* Needed for pseudo-element */
+    padding: 0.5rem 0; /* Remove horizontal padding to avoid affecting underline */
+    position: relative; /* Needed for positioning the pseudo-element */
 }
 
 nav a::after {
     content: ""; /* Creates the underline */
     position: absolute;
-    left: 0;
-    bottom: 0; /* Positioned at the bottom of the text */
+    left: 0; /* Start underline exactly below the text */
+    right: 0; /* Ensure no additional width */
+    bottom: 0; /* Position underline at the very bottom */
     width: 0; /* Start with no width */
     height: 2px; /* Height of the underline */
     background-color: #FFFFFF; /* White underline */
@@ -67,7 +68,7 @@ nav a::after {
 }
 
 nav a:hover::after {
-    width: 100%; /* Expand underline to full word length */
+    width: 100%; /* Expand underline to match the text's width */
 }
 
 /* Main content area */
