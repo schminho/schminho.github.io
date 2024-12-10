@@ -52,7 +52,7 @@ nav {
 nav a {
     color: #FFFFFF; /* White links */
     text-decoration: none;
-    padding: 0.5rem 0; /* Adjust vertical padding */
+    padding: 1rem 0; /* Adjust vertical padding */
     position: relative; /* Needed for positioning the pseudo-element */
 }
 
