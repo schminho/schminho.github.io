@@ -4,64 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Reset body and html height to avoid extra whitespace */
-        html, body {
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333333;
             margin: 0;
             padding: 0;
-            height: 100%;
+            background-color: #FFFFFF;
         }
-
-        /* Ensure the page content covers the full height */
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
         header {
             position: fixed;
-            top: 0;
             width: 100%;
-            background: #333;
-            color: white;
-            padding: 10px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: top 0.3s; /* Smooth transition for hiding/showing */
+            top: 0;
+            transition: top 0.3s ease-in-out; /* Smooth hide/show transition */
         }
-
         nav {
-            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
         }
-
         nav a {
-            color: white;
-            margin: 0 15px;
+            color: #005B82;
             text-decoration: none;
+            padding: 0.5rem 1rem;
         }
-
         nav a:hover {
             text-decoration: underline;
         }
-
         main {
-            flex: 1;
-            margin-top: 60px; /* To avoid content being hidden under the header */
-            padding: 20px;
+            padding: 2rem;
+            margin-top: 80px; /* Height of the header */
         }
-
+        h1, h2, h3 {
+            color: #005B82;
+        }
+        button {
+            background-color: #005B82;
+            color: #FFFFFF;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #004466;
+        }
         footer {
-            background: #333;
-            color: white;
+            background-color: #333333;
+            color: #FFFFFF;
             text-align: center;
-            font-size: 12px;
-            padding: 5px;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
+    <script src="/assets/js/header.js"></script>
 </head>
 <body>
-    <!-- Sticky and dynamic header -->
-    <header id="header">
+    <header>
         <nav>
             <a href="/">Home</a>
             <a href="/about/">About</a>
@@ -69,18 +73,11 @@
             <a href="/blog/">Blog</a>
         </nav>
     </header>
-
-    <!-- Main Content -->
     <main>
         {{ content }}
     </main>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 gslnmr</p>
+        <p>&copy; 2024 My Custom Website. All rights reserved.</p>
     </footer>
-
-    <!-- Link to JavaScript File -->
-    <script src="/assets/js/header.js"></script>
 </body>
 </html>
