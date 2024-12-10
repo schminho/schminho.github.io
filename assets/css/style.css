@@ -9,25 +9,16 @@ body {
     justify-content: center; /* Center the container horizontally */
 }
 
-/* Container styling */
+/* General container styling */
 .container {
     width: 100%; /* Full width */
     max-width: 1920px; /* Cap width at 1920px */
-    margin: 0 auto; /* Center the container */
-    background-color: #FFFFFF; /* Content background color */
+    margin: 0 auto; /* Center container */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
 }
 
-/* Content area inside the container */
-.content {
-    width: 80%; /* Constrain content to 80% */
-    margin: 0 auto; /* Center content within the container */
-}
-
-/* Header Styling */
+/* Header styling */
 header {
     background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
@@ -41,15 +32,13 @@ header {
 nav {
     width: 100%; /* Full width for the nav */
     background-color: #003300; /* Dark green background */
-    margin: 0 auto; /* Center the nav container */
     padding: 1rem 0;
-    display: flex;
-    justify-content: center; /* Center the nav items container */
 }
 
 /* Nav items container */
 .nav-items {
     width: 80%; /* Constrain nav items to 80% of the nav bar */
+    margin: 0 auto; /* Align nav items with the content */
     display: flex;
     justify-content: flex-start; /* Left-align nav items */
 }
@@ -74,9 +63,10 @@ main {
     margin-top: 80px; /* Height of the header */
 }
 
+/* Content inside the container */
 .content {
-    width: 80%; /* Constrain content to 80% of the container */
-    margin: 0 auto; /* Center content within the container */
+    width: 80%; /* Constrain content to 80% */
+    margin: 0 auto; /* Align content with the nav items */
 }
 
 /* Content Links Styling */
@@ -114,7 +104,7 @@ button:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Footer Styling */
+/* Footer styling */
 footer {
     background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
