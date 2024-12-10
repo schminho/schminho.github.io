@@ -98,7 +98,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-radius: 8px; /* Rounded corners */
     margin: 2rem 0; /* Spacing from other sections */
-    width: 50%; /* Constrain teaser to 50% of the content area */
+    width: 50%; /* Default: 50% of the content area */
     box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
 }
 
@@ -146,6 +146,21 @@ main {
 
 .teaser-button:hover {
     background-color: #002600; /* Slightly darker green */
+}
+
+/* Responsive Styling for Smaller Viewports */
+@media (max-width: 768px) {
+    .teaser {
+        width: 100%; /* Teaser takes up 100% of the content area */
+    }
+
+    .teaser-title {
+        font-size: 1.25rem; /* Slightly smaller title for better layout */
+    }
+
+    .teaser-description {
+        font-size: 0.9rem; /* Adjust description size for smaller screens */
+    }
 }
 
 /* Footer styling */
