@@ -148,17 +148,17 @@ main {
     background-color: #002600; /* Slightly darker green */
 }
 
-/* Responsive Styling for Larger Viewports */
-@media (min-width: 1440px) {
+/* Responsive Layouts for Teaser */
+@media (min-width: 768px) and (max-width: 1023px) {
     .teaser {
-        flex-direction: row; /* Place image on the left and text on the right */
+        flex-direction: row; /* Image on the left, text on the right */
         align-items: center; /* Vertically align image and content */
         gap: 2rem; /* Increase spacing between image and content */
+        width: 100%; /* Full width for the teaser */
     }
 
     .teaser-image {
         width: 40%; /* Constrain image to 40% of the teaser width */
-        max-height: none; /* Remove height limit for larger screens */
     }
 
     .teaser-content {
@@ -166,18 +166,10 @@ main {
     }
 }
 
-/* Responsive Styling for Smaller Viewports */
 @media (max-width: 768px) {
     .teaser {
+        flex-direction: column; /* Stack image and text vertically */
         width: 100%; /* Teaser takes up 100% of the content area */
-    }
-
-    .teaser-title {
-        font-size: 1.25rem; /* Slightly smaller title for better layout */
-    }
-
-    .teaser-description {
-        font-size: 0.9rem; /* Adjust description size for smaller screens */
     }
 }
 
