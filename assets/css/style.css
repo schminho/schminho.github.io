@@ -45,13 +45,14 @@ nav {
     margin: 0 auto; /* Align nav items with the content */
     display: flex;
     justify-content: flex-start; /* Left-align nav items */
+    gap: 1rem; /* Add spacing between nav items */
 }
 
 /* Individual nav links */
 nav a {
     color: #FFFFFF; /* White links */
     text-decoration: none;
-    padding: 0.5rem 0; /* Remove horizontal padding to avoid affecting underline */
+    padding: 0.5rem 0; /* Adjust vertical padding */
     position: relative; /* Needed for positioning the pseudo-element */
 }
 
