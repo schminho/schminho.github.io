@@ -149,7 +149,7 @@ main {
 }
 
 /* Responsive Styling for Larger Viewports */
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
     .teaser {
         flex-direction: row; /* Place image on the left and text on the right */
         align-items: center; /* Vertically align image and content */
