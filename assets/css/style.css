@@ -5,22 +5,28 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FFFFFF;
+    display: flex;
+    justify-content: center; /* Center the entire site horizontally */
+}
+
+.container {
+    width: 1920px; /* Absolute width for the project */
+    margin: 0 auto; /* Ensure centered alignment */
 }
 
 /* Header Styling */
 header {
-    background-color: #003000; /* Slightly lighter green background */
+    background-color: #003300; /* Slightly lighter green background */
     color: #FFFFFF; /* White text */
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start; /* Align navigation to the left */
     padding: 1rem;
 }
 
@@ -44,12 +50,12 @@ main {
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #003000; /* Slightly lighter green for headings */
+    color: #003300; /* Slightly lighter green for headings */
 }
 
 /* Button styling */
 button {
-    background-color: #003000; /* Slightly lighter green */
+    background-color: #003300; /* Slightly lighter green */
     color: #FFFFFF; /* White text */
     border: none;
     padding: 0.75rem 1.5rem;
@@ -59,13 +65,13 @@ button {
 }
 
 button:hover {
-    background-color: #003000; /* Slightly darker green on hover */
+    background-color: #002600; /* Slightly darker green on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #003000; /* Slightly lighter green background */
+    background-color: #003300; /* Slightly lighter green background */
     color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
@@ -73,14 +79,14 @@ footer {
 
 /* Link styling in the content area */
 main a {
-    color: #003000; /* Slightly lighter green for links */
+    color: #003300; /* Slightly lighter green for links */
     text-decoration: none;
-    border-bottom: 1px solid #003000; /* Subtle underline */
+    border-bottom: 1px solid #003300; /* Subtle underline */
     transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
 
 main a:hover {
     color: #FFFFFF; /* White on hover */
-    background-color: #003000; /* Light gray background */
+    background-color: #F0F0F0; /* Light gray background */
     border-bottom: 1px solid #FFFFFF; /* Matching underline */
 }
