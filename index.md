@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Custom Website
+# Welcome to gslnmr!
 
 Welcome to the homepage of my custom website! Here is some dummy content to demonstrate the layout.
 
