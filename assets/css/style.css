@@ -9,8 +9,8 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #003300; /* Darker green background */
-    color: #CCAA00; /* Darker gold text */
+    background-color: #002100; /* Darker green background */
+    color: #FFFFFF; /* White text */
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,7 +25,7 @@ nav {
 }
 
 nav a {
-    color: #CCAA00; /* Darker gold links */
+    color: #FFFFFF; /* White links */
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -33,8 +33,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #B38F00; /* Even darker gold on hover */
-    border-bottom: 2px solid #B38F00; /* Matching underline */
+    color: #CCCCCC; /* Slightly lighter white on hover */
+    border-bottom: 2px solid #CCCCCC; /* Matching underline */
 }
 
 /* Main content area */
@@ -45,13 +45,13 @@ main {
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #003300; /* Darker green for headings */
+    color: #002100; /* Darker green for headings */
 }
 
 /* Button styling */
 button {
-    background-color: #003300; /* Darker green */
-    color: #FFFFFF;
+    background-color: #002100; /* Darker green */
+    color: #FFFFFF; /* White text */
     border: none;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
@@ -60,27 +60,27 @@ button {
 }
 
 button:hover {
-    background-color: #002200; /* Even darker green */
+    background-color: #001800; /* Even darker green */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #003300; /* Darker green background */
-    color: #CCAA00; /* Darker gold text */
+    background-color: #002100; /* Darker green background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
 }
 
 /* Link styling in the content area */
 main a {
-    color: #003300; /* Darker green for links */
+    color: #002100; /* Darker green for links */
     text-decoration: none;
-    border-bottom: 1px solid #003300; /* Subtle underline */
+    border-bottom: 1px solid #002100; /* Subtle underline */
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 main a:hover {
-    color: #CCAA00; /* Darker gold on hover */
-    border-bottom: 1px solid #CCAA00; /* Matching underline */
+    color: #FFFFFF; /* White on hover */
+    border-bottom: 1px solid #FFFFFF; /* Matching underline */
 }
