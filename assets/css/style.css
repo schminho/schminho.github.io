@@ -27,6 +27,7 @@ header {
     width: 100%; /* Full width for the header */
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Ensure height by adding padding */
     box-sizing: border-box; /* Consistent box model */
 }
 
@@ -44,8 +45,6 @@ nav {
     margin: 0 auto; /* Align nav items with the content */
     display: flex;
     justify-content: flex-start; /* Left-align nav items */
-    box-sizing: border-box; /* Consistent box model */
-    padding-left: 0; /* Remove potential offset */
 }
 
 /* Individual nav links */
@@ -53,12 +52,22 @@ nav a {
     color: #FFFFFF; /* White links */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease; /* Smooth underline effect */
+    position: relative; /* Needed for pseudo-element */
 }
 
-nav a:hover {
-    border-bottom: 2px solid #FFFFFF; /* White underline on hover */
+nav a::after {
+    content: ""; /* Creates the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Positioned at the bottom of the text */
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background-color: #FFFFFF; /* White underline */
+    transition: width 0.3s ease; /* Smooth animation for underline */
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand underline to full word length */
 }
 
 /* Main content area */
@@ -74,7 +83,6 @@ main {
     width: 80%; /* Constrain content to 80% */
     margin: 0 auto; /* Align content with the nav items */
     box-sizing: border-box; /* Consistent box model */
-    padding-left: 0; /* Match alignment with navigation items */
 }
 
 /* Content Links Styling */
