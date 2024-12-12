@@ -277,6 +277,9 @@ footer {
 
 #bell-curve {
     display: block;
+    width: 100%; /* Use full container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Constrain max width */
     margin: 1rem auto;
     background-color: #fff;
     border: 1px solid #ddd;
