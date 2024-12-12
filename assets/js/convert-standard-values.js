@@ -1,22 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const convertButton = document.getElementById("convert-button");
-    const inputScore = document.getElementById("input-score");
-    const tScoreResult = document.getElementById("t-score-result");
-    const iqScoreResult = document.getElementById("iq-score-result");
+    const zScoreInput = document.getElementById("z-score");
+    const tScoreInput = document.getElementById("t-score");
+    const iqScoreInput = document.getElementById("iq-score");
 
-    convertButton.addEventListener("click", function () {
-        const zScore = parseFloat(inputScore.value);
-        if (isNaN(zScore)) {
-            alert("Please enter a valid z-score.");
-            return;
+    function updateValues(source) {
+        const zScore = parseFloat(zScoreInput.value);
+        const tScore = parseFloat(tScoreInput.value);
+        const iqScore = parseFloat(iqScoreInput.value);
+
+        if (source === "z-score" && !isNaN(zScore)) {
+            tScoreInput.value = (50 + zScore * 10).toFixed(2);
+            iqScoreInput.value = (100 + zScore * 15).toFixed(2);
+        } else if (source === "t-score" && !isNaN(tScore)) {
+            const zFromT = (tScore - 50) / 10;
+            zScoreInput.value = zFromT.toFixed(2);
+            iqScoreInput.value = (100 + zFromT * 15).toFixed(2);
+        } else if (source === "iq-score" && !isNaN(iqScore)) {
+            const zFromIQ = (iqScore - 100) / 15;
+            zScoreInput.value = zFromIQ.toFixed(2);
+            tScoreInput.value = (50 + zFromIQ * 10).toFixed(2);
         }
+    }
 
-        // Convert z-score to t-score and IQ-score
-        const tScore = 50 + (zScore * 10);
-        const iqScore = 100 + (zScore * 15);
-
-        // Update results
-        tScoreResult.textContent = tScore.toFixed(2);
-        iqScoreResult.textContent = iqScore.toFixed(2);
-    });
+    zScoreInput.addEventListener("input", () => updateValues("z-score"));
+    tScoreInput.addEventListener("input", () => updateValues("t-score"));
+    iqScoreInput.addEventListener("input", () => updateValues("iq-score"));
 });
