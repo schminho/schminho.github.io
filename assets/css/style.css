@@ -1,12 +1,18 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: #333333;
+/* Reset default margins and paddings */
+* {
     margin: 0;
     padding: 0;
-    background-color: #EDEDED; /* Light gray background */
+    box-sizing: border-box;
+}
+
+/* Body setup */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #EDEDED;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body is at least the height of the viewport */
+    min-height: 100vh;
 }
 
 /* General container styling */
@@ -72,12 +78,10 @@ nav a:hover::after {
     width: 100%; /* Expand underline to match the text's width */
 }
 
+/* Main content */
 main {
-    flex: 1; /* Allows main content to expand and push footer down */
-    display: block; /* Reset from flex to normal flow for consistent spacing */
-    margin-top: 80px; /* Account for the height of the header */
-    padding: 2rem 0; /* Adjust padding for content area */
-    box-sizing: border-box; /* Ensure consistent box model */
+    flex: 1;
+    padding: 2rem 0;
 }
 
 /* Content inside the container */
@@ -122,14 +126,13 @@ button:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Footer styling */
 footer {
-    background-color: #003300; /* Dark green background */
-    color: #FFFFFF; /* White text */
+    background-color: #003300;
+    color: #FFF;
     text-align: center;
     padding: 1rem;
-    width: 100%; /* Ensure the footer spans the entire width */
-    box-sizing: border-box; /* Include padding in width calculations */
-    margin-top: auto; /* Push the footer to the bottom */
+    width: 100%;
 }
 
 /* Teaser Section */
