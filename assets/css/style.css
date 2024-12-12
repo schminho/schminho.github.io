@@ -252,29 +252,41 @@ footer {
     text-align: center;
 }
 
+/* General input and slider styles */
 #converter-app input,
 #converter-app input[type="range"] {
     width: calc(100% - 2rem); /* Full width minus padding */
-    margin: 0.5rem auto; /* Centered vertically with spacing */
-    padding: 0.5rem; /* Add padding inside the input fields */
+    margin: 0.5rem auto; /* Vertical spacing */
+    padding: 0.5rem; /* Internal padding for inputs */
     border: 1px solid #ddd;
     border-radius: 4px;
     display: block; /* Ensure inputs stack vertically */
-    box-sizing: border-box; /* Include padding in the element's dimensions */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Align labels with input fields */
+#converter-app label {
+    display: block; /* Ensure labels are on their own line */
+    margin: 0.5rem auto; /* Match spacing with inputs */
+    padding-left: 1rem; /* Align labels to match input padding */
+    text-align: left; /* Align text to the left */
+    width: calc(100% - 2rem); /* Match input field width */
+    box-sizing: border-box; /* Consistent box model */
+}
+
+/* Ensure consistent alignment in Safari (mobile) */
+#converter-app {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    padding: 1rem; /* Add padding around the container */
+    max-width: 600px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+    box-sizing: border-box; /* Include padding in dimensions */
 }
 
 #slider-container {
     margin: 1rem 0;
-}
-
-#converter-app {
-    max-width: 600px; /* Constrain the app width */
-    margin: 2rem auto; /* Center the app */
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #bell-curve {
