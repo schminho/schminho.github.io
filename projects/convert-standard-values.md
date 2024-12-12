@@ -6,14 +6,16 @@ permalink: /projects/convert-standard-values/
 
 <div id="converter-app">
     <h1>Convert Standard Values</h1>
-    <p>Use this tool to convert between z-score, t-score, and IQ score.</p>
-    <label for="input-score">Enter a z-score:</label>
-    <input type="number" id="input-score" placeholder="Enter z-score">
-    <button id="convert-button">Convert</button>
+    <p>Fill any field to automatically calculate the other values.</p>
 
-    <h2>Results:</h2>
-    <p>T-score: <span id="t-score-result">-</span></p>
-    <p>IQ-score: <span id="iq-score-result">-</span></p>
+    <label for="z-score">Z-Score:</label>
+    <input type="number" id="z-score" placeholder="Enter z-score">
+
+    <label for="t-score">T-Score:</label>
+    <input type="number" id="t-score" placeholder="Enter t-score">
+
+    <label for="iq-score">IQ-Score:</label>
+    <input type="number" id="iq-score" placeholder="Enter IQ score">
 </div>
 
 <script src="/assets/js/convert-standard-values.js"></script>
