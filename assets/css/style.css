@@ -246,16 +246,6 @@ footer {
     }
 }
 
-#converter-app {
-    max-width: 90%; /* Fit within mobile viewports */
-    margin: 1rem auto;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 #converter-app h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -275,13 +265,33 @@ footer {
     margin: 1rem 0;
 }
 
+#converter-app {
+    max-width: 600px; /* Constrain the app width */
+    margin: 2rem auto; /* Center the app */
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #bell-curve {
     display: block;
-    width: 100%; /* Use full container width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 600px; /* Constrain max width */
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Constrain the canvas width */
     margin: 1rem auto;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    #converter-app {
+        max-width: 90%; /* Use more of the screen for mobile */
+    }
+
+    #bell-curve {
+        max-width: 300px; /* Smaller canvas for mobile */
+    }
 }
