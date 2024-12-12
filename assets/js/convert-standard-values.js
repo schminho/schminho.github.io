@@ -1,7 +1,7 @@
 function adjustCanvasSize() {
     const isMobile = window.innerWidth <= 768; // Detect mobile screens
-    bellCurveCanvas.width = isMobile ? 300 : 600; // Smaller canvas on mobile
-    bellCurveCanvas.height = isMobile ? 150 : 300; // Smaller height on mobile
+    bellCurveCanvas.width = isMobile ? 300 : 500; // Smaller canvas on mobile
+    bellCurveCanvas.height = isMobile ? 150 : 250; // Smaller height on mobile
 }
 
 function drawBellCurve(zScore) {
@@ -15,7 +15,7 @@ function drawBellCurve(zScore) {
 
     // Draw the bell curve
     ctx.beginPath();
-    const scaleFactor = window.innerWidth <= 768 ? 1.5 : 2; // Smaller scaling on mobile
+    const scaleFactor = window.innerWidth <= 768 ? 1.5 : 1.8; // Adjust scaling for mobile and desktop
     for (let x = -3; x <= 3; x += 0.01) {
         const y = Math.exp(-0.5 * x ** 2) / Math.sqrt(2 * Math.PI); // Gaussian distribution formula
         const canvasX = ((x + 3) / 6) * width; // Map x to canvas
@@ -35,6 +35,39 @@ function drawBellCurve(zScore) {
     ctx.lineWidth = 1;
     ctx.stroke();
 }
+
+function updateValues(source) {
+    const zScore = parseFloat(zScoreInput.value);
+    const tScore = parseFloat(tScoreInput.value);
+    const iqScore = parseFloat(iqScoreInput.value);
+
+    if (source === "z-score" && !isNaN(zScore)) {
+        tScoreInput.value = (50 + zScore * 10).toFixed(2);
+        iqScoreInput.value = (100 + zScore * 15).toFixed(2);
+        zSlider.value = zScore;
+        drawBellCurve(zScore);
+    } else if (source === "t-score" && !isNaN(tScore)) {
+        const zFromT = (tScore - 50) / 10;
+        zScoreInput.value = zFromT.toFixed(2);
+        iqScoreInput.value = (100 + zFromT * 15).toFixed(2);
+        zSlider.value = zFromT;
+        drawBellCurve(zFromT);
+    } else if (source === "iq-score" && !isNaN(iqScore)) {
+        const zFromIQ = (iqScore - 100) / 15;
+        zScoreInput.value = zFromIQ.toFixed(2);
+        tScoreInput.value = (50 + zFromIQ * 10).toFixed(2);
+        zSlider.value = zFromIQ;
+        drawBellCurve(zFromIQ);
+    } else if (source === "slider") {
+        zScoreInput.value = zSlider.value;
+        updateValues("z-score");
+    }
+}
+
+zScoreInput.addEventListener("input", () => updateValues("z-score"));
+tScoreInput.addEventListener("input", () => updateValues("t-score"));
+iqScoreInput.addEventListener("input", () => updateValues("iq-score"));
+zSlider.addEventListener("input", () => updateValues("slider"));
 
 // Redraw the curve when the window is resized
 window.addEventListener("resize", () => drawBellCurve(parseFloat(zSlider.value)));
