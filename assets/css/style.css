@@ -8,7 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure body is at least the height of the viewport */
-    justify-content: center; /* Center the container horizontally */
 }
 
 /* General container styling */
@@ -74,12 +73,17 @@ nav a:hover::after {
     width: 100%; /* Expand underline to match the text's width */
 }
 
-/* Main content area */
+/* Main content fills the available space */
 main {
     flex: 1; /* Fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure content starts at the top */
     padding: 2rem 0; /* Adjust padding for content area */
     margin-top: 80px; /* Height of the header */
     box-sizing: border-box; /* Ensure padding and borders are calculated consistently */
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 /* Content inside the container */
