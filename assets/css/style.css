@@ -8,11 +8,13 @@
 /* Body setup */
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #333;
-    background-color: #EDEDED;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    background-color: #EDEDED; /* Light gray background */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure body is at least the height of the viewport */
 }
 
 /* General container styling */
@@ -78,10 +80,11 @@ nav a:hover::after {
     width: 100%; /* Expand underline to match the text's width */
 }
 
-/* Main content */
 main {
-    flex: 1;
-    padding: 2rem 0;
+    flex: 1; /* Allow main content to grow and push footer down */
+    margin-top: 80px; /* Adjust for fixed header height */
+    padding: 2rem; /* Add spacing inside the content area */
+    box-sizing: border-box; /* Ensure consistent padding and borders */
 }
 
 /* Content inside the container */
@@ -126,13 +129,14 @@ button:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Footer styling */
 footer {
-    background-color: #003300;
-    color: #FFF;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
     width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* Push the footer to the bottom */
 }
 
 /* Teaser Section */
