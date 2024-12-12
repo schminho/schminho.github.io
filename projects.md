@@ -4,8 +4,14 @@ title: Projects
 permalink: /projects/
 ---
 
-# Our Projects
+# Projects Overview
 
-{% for project in site.projects %}
-- [{{ project.title }}]({{ project.url }}) - {{ project.description }}
-{% endfor %}
+Below is a list of all our projects:
+
+<ul>
+    {% for page in site.pages %}
+        {% if page.url contains '/projects/' and page.url != '/projects/' %}
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
