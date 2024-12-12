@@ -6,6 +6,8 @@ body {
     padding: 0;
     background-color: #EDEDED; /* Light gray background */
     display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body is at least the height of the viewport */
     justify-content: center; /* Center the container horizontally */
 }
 
