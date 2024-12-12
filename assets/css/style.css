@@ -1,4 +1,4 @@
-/* Body setup */
+/* General body styling */
 body {
     font-family: 'Open Sans', sans-serif;
     color: #333333;
@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure body is at least the height of the viewport */
+    justify-content: center; /* Center the container horizontally */
 }
 
 /* General container styling */
@@ -22,14 +23,13 @@ body {
 
 /* Header styling */
 header {
-    background-color: #003300; /* Dark green */
-    color: #FFFFFF;
-    padding: 1rem 0;
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
     position: fixed;
-    top: 0;
-    width: 100%;
+    width: 100%; /* Full width for the header */
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Ensure height by adding padding */
     box-sizing: border-box; /* Consistent box model */
 }
 
@@ -74,11 +74,12 @@ nav a:hover::after {
     width: 100%; /* Expand underline to match the text's width */
 }
 
+/* Main content area */
 main {
-    flex: 1; /* Allow main content to grow and push footer down */
-    margin-top: 80px; /* Adjust for fixed header height */
-    padding: 2rem; /* Add spacing inside the content area */
-    box-sizing: border-box; /* Ensure consistent padding and borders */
+    flex: 1; /* Fill remaining space */
+    padding: 2rem 0; /* Adjust padding for content area */
+    margin-top: 80px; /* Height of the header */
+    box-sizing: border-box; /* Ensure padding and borders are calculated consistently */
 }
 
 /* Content inside the container */
@@ -123,14 +124,14 @@ button:hover {
     transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Footer styling */
 footer {
-    background-color: #003300; /* Dark green */
+    background-color: #003300; /* Dark green background */
     color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
     width: 100%;
-    box-sizing: border-box;
-    margin-top: auto; /* Push the footer to the bottom */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Teaser Section */
