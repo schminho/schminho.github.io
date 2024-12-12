@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let x = -3; x <= 3; x += 0.01) {
             const y = Math.exp(-0.5 * x ** 2) / Math.sqrt(2 * Math.PI);
             const canvasX = ((x + 3) / 6) * width;
-            const canvasY = height - (y * height * 5); // Adjusted multiplier for better scaling
+            const canvasY = height - (y * height * 0.8); // Adjusted multiplier for better scaling
             ctx.lineTo(canvasX, canvasY);
         }
         ctx.strokeStyle = "#003300";
