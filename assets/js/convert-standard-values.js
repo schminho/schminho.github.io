@@ -1,28 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const zScoreInput = document.getElementById("z-score");
-    const tScoreInput = document.getElementById("t-score");
-    const iqScoreInput = document.getElementById("iq-score");
+---
+layout: default
+title: Convert Standard Values
+permalink: /projects/convert-standard-values/
+---
 
-    function updateValues(source) {
-        const zScore = parseFloat(zScoreInput.value);
-        const tScore = parseFloat(tScoreInput.value);
-        const iqScore = parseFloat(iqScoreInput.value);
+<div id="converter-app">
+    <h1>Convert Standard Values</h1>
+    <p>Fill any field or use the slider to see where the values fall on a typical bell curve.</p>
 
-        if (source === "z-score" && !isNaN(zScore)) {
-            tScoreInput.value = (50 + zScore * 10).toFixed(2);
-            iqScoreInput.value = (100 + zScore * 15).toFixed(2);
-        } else if (source === "t-score" && !isNaN(tScore)) {
-            const zFromT = (tScore - 50) / 10;
-            zScoreInput.value = zFromT.toFixed(2);
-            iqScoreInput.value = (100 + zFromT * 15).toFixed(2);
-        } else if (source === "iq-score" && !isNaN(iqScore)) {
-            const zFromIQ = (iqScore - 100) / 15;
-            zScoreInput.value = zFromIQ.toFixed(2);
-            tScoreInput.value = (50 + zFromIQ * 10).toFixed(2);
-        }
-    }
+    <label for="z-score">Z-Score:</label>
+    <input type="number" id="z-score" placeholder="Enter z-score">
 
-    zScoreInput.addEventListener("input", () => updateValues("z-score"));
-    tScoreInput.addEventListener("input", () => updateValues("t-score"));
-    iqScoreInput.addEventListener("input", () => updateValues("iq-score"));
-});
+    <label for="t-score">T-Score:</label>
+    <input type="number" id="t-score" placeholder="Enter t-score">
+
+    <label for="iq-score">IQ-Score:</label>
+    <input type="number" id="iq-score" placeholder="Enter IQ score">
+
+    <div id="slider-container">
+        <label for="z-slider">Adjust Z-Score:</label>
+        <input type="range" id="z-slider" min="-3" max="3" step="0.1" value="0">
+    </div>
+
+    <canvas id="bell-curve" width="300" height="150"></canvas>
+</div>
+
+<script src="/assets/js/convert-standard-values.js"></script>
