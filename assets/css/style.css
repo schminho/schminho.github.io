@@ -254,7 +254,7 @@ footer {
 
 #converter-app input,
 #converter-app input[type="range"] {
-    width: calc(100% - 2rem); /* Full width minus padding */
+    /*width: calc(100% - 2rem); /* Full width minus padding */
     margin: 0.5rem auto; /* Centered vertically with spacing */
     padding: 0.5rem; /* Add padding inside the input fields */
     border: 1px solid #ddd;
