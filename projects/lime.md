@@ -13,6 +13,7 @@ permalink: /projects/lime/
        src="https://innovation-lab.limesurvey.net/562935?lang=de"
        width="100%" 
        height="800" 
-       style="border: 1px solid #ddd; border-radius: 8px;">
+       style="border: 1px solid #ddd; border-radius: 8px;"
+       sandbox="allow-same-origin allow-scripts allow-forms">
    </iframe>
-</div>
+
