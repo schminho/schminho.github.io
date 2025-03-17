@@ -112,17 +112,17 @@ body {
     font-size: 18px;
 }
 
-/* Close Button (Same Position as Burger) */
+/* Close Button (Fixed, Same Position as Burger) */
 .close-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed;  /* Same as burger menu */
+    top: 20px;        /* Same top value as burger */
+    right: 20px;      /* Same right value as burger */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    z-index: 1001; /* Ensures it's always on top */
+    z-index: 1001; /* Ensures it stays above everything */
 }
 
 /* Show menu on mobile */
