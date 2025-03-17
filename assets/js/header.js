@@ -26,4 +26,32 @@ document.addEventListener("DOMContentLoaded", function () {
             lastScrollTop = currentScrollTop; // Update the last scroll position
         }
     });
+
+    // Mobile Menu Toggle Functionality
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+
+    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+        // Open Mobile Menu
+        mobileMenuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            mobileMenu.classList.add("open");
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        });
+
+        // Close Mobile Menu
+        closeMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("open");
+            document.body.style.overflow = "unset"; // Enable scrolling
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove("open");
+                document.body.style.overflow = "unset";
+            }
+        });
+    }
 });
