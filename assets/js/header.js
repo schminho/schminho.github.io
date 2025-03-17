@@ -29,33 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     const closeMenuBtn = document.getElementById("close-menu-btn");
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-
-    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-        mobileMenuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            mobileMenu.classList.add("open");
-            mobileMenuBtn.classList.add("hidden");  // Hide burger
-            closeMenuBtn.classList.remove("hidden"); // Show close button
-            document.body.classList.add("no-scroll");
-        });
-
-        closeMenuBtn.addEventListener("click", function () {
-            mobileMenu.classList.remove("open");
-            mobileMenuBtn.classList.remove("hidden"); // Show burger
-            closeMenuBtn.classList.add("hidden"); // Hide close button
-            document.body.classList.remove("no-scroll");
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenuBtn = document.getElementById("close-menu-btn");
 
     if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
         // Open Mobile Menu
-        mobileMenuBtn.addEventListener("click", function () {
+        mobileMenuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
             mobileMenu.classList.add("open");
             mobileMenuBtn.style.display = "none";  // Hide burger button
             closeMenuBtn.style.display = "block"; // Show close button
@@ -72,16 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Close menu when clicking outside
         document.addEventListener("click", function (e) {
-                    if (
-                        !mobileMenu.contains(e.target) &&
-                        !mobileMenuBtn.contains(e.target) &&
-                        mobileMenu.classList.contains("open")
-                    ) {
-                        mobileMenu.classList.remove("open");
-                        mobileMenuBtn.style.display = "block";
-                        closeMenuBtn.style.display = "none";
-                        document.body.classList.remove("no-scroll");
-                    }
-                });
+            if (
+                !mobileMenu.contains(e.target) &&
+                !mobileMenuBtn.contains(e.target) &&
+                mobileMenu.classList.contains("open")
+            ) {
+                mobileMenu.classList.remove("open");
+                mobileMenuBtn.style.display = "block";
+                closeMenuBtn.style.display = "none";
+                document.body.classList.remove("no-scroll");
             }
         });
+    }
+});
