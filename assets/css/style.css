@@ -115,13 +115,14 @@ body {
 /* Close Button (Same Position as Burger) */
 .close-menu {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
+    z-index: 1001; /* Ensures it's always on top */
 }
 
 /* Show menu on mobile */
