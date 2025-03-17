@@ -114,21 +114,17 @@ body {
 
 /* Close Button (Same Position as Burger) */
 .close-menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: fixed;  /* Ensures same reference as burger */
+    top: 20px;        /* Same top position */
+    right: 20px;      /* Same right position */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    padding: 20px;
-    z-index: 1002;
-}
-
-/* Hides the close button initially */
-.hidden {
-    display: none;
+    padding: 20px;    /* Ensures proper spacing */
+    display: none;    /* Hide it initially */
+    z-index: 1002;    /* Keep it above everything */
 }
 
 /* Show menu on mobile */
