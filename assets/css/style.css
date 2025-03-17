@@ -71,14 +71,35 @@ body {
     color: #39FF14; /* Neon Green for Icons */
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu Button (Burger Icon) */
 .menu-toggle {
-    display: none;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: none;
     border: none;
-    font-size: 24px;
-    color: white;
     cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Transform burger into 'X' */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Mobile Menu */
@@ -86,15 +107,51 @@ body {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
+    width: 300px;
     height: 100%;
-    background: rgba(33, 33, 33, 0.9);
-    backdrop-filter: blur(5px);
+    background-color: #003300; /* Dark green background */
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
     gap: 20px;
     transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+/* Show menu */
+.mobile-menu.open {
+    right: 0;
+}
+
+/* Close button inside menu */
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Full-screen overlay when menu is open */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+}
+
+/* Show overlay when active */
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-menu a {
@@ -118,11 +175,15 @@ body {
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .mobile-menu.open {
         right: 0;
+    }
+
+    .menu-overlay.active {
+        display: block;
     }
 }
 
