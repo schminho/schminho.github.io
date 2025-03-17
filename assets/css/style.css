@@ -40,13 +40,28 @@ nav {
     box-sizing: border-box; /* Consistent box model */
 }
 
-/* Nav items container */
+/* Updated navigation container */
 .nav-items {
-    width: 80%; /* Constrain nav items to 80% of the nav bar */
-    margin: 0 auto; /* Align nav items with the content */
     display: flex;
-    justify-content: flex-start; /* Left-align nav items */
-    gap: 1rem; /* Add spacing between nav items */
+    justify-content: space-between; /* Home on the left, Projects on the right */
+    align-items: center;
+    width: 100%;
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+/* Ensure navigation links are inline */
+.nav-items a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between icon and text */
+}
+
+/* Push 'Projects' to the right */
+.nav-items a:first-child {
+    margin-right: auto; /* Pushes "Projects" to the right */
 }
 
 /* Individual nav links */
