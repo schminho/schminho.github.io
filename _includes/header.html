@@ -1,40 +1,38 @@
 <head>
     <!-- FontAwesome Free CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .nav-item {
-            font-weight: normal; /* Default font weight */
-            display: flex;
-            align-items: center;
-            gap: 8px; /* Space between icon and text */
-            text-decoration: none;
-            color: white; /* Keep text color white */
-        }
-
-        /* Make only "ptrsmd" bold */
-        .nav-item strong {
-            font-weight: bold;
-        }
-
-        /* Change icon color */
-        .nav-item i {
-            color: #39FF14; /* Neon Green */
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
-<header>
+<header class="header">
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="/" class="nav-item">
-                <i class="fa-solid fa-code"></i> <strong>ptrsmd</strong>
+            <!-- Logo / Home -->
+            <a href="/" class="nav-item logo">
+                <i class="fas fa-code"></i> <strong>ptrsmd</strong>
             </a>
-            <a href="/about/" class="nav-item">
-                <i class="fa-solid fa-user"></i> About
-            </a>
-            <a href="/projects/" class="nav-item">
-                <i class="fa-solid fa-fire"></i> Projects
-            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="/about" class="nav-item"><i class="fas fa-user"></i> About</a>
+                <a href="/projects" class="nav-item"><i class="fas fa-fire"></i> Projects</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="close-menu-btn" class="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="/about" class="nav-item"><i class="fas fa-user"></i> About</a>
+        <a href="/projects" class="nav-item"><i class="fas fa-fire"></i> Projects</a>
+    </div>
 </header>
+
+<script src="/assets/js/header.js"></script>
