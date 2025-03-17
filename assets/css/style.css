@@ -101,10 +101,10 @@ body {
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-/* Show menu with fade-in effect */
 .mobile-menu.open {
     opacity: 1;
     visibility: visible;
+    display: flex;
 }
 
 .mobile-menu a {
@@ -114,17 +114,17 @@ body {
 
 /* Close Button (Same Position as Burger) */
 .close-menu {
-    position: fixed;  /* Ensures same reference as burger */
-    top: 20px;        /* Same top position */
-    right: 20px;      /* Same right position */
+    position: absolute;  /* Changed from fixed to absolute */
+    top: 20px;           /* Keeps the same positioning */
+    right: 20px;         /* Ensures alignment */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    padding: 20px;    /* Ensures proper spacing */
-    display: none;    /* Hide it initially */
-    z-index: 1002;    /* Keep it above everything */
+    padding: 20px;
+    display: none;       /* Hides the close button until menu opens */
+    z-index: 1002;
 }
 
 /* Show menu on mobile */
