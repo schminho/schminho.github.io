@@ -28,34 +28,46 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mobile Menu Toggle Functionality
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    const overlay = document.getElementById("menu-overlay");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
 
-    if (mobileMenuBtn && mobileMenu && overlay) {
+    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
         mobileMenuBtn.addEventListener("click", function (e) {
             e.stopPropagation();
-            document.body.classList.toggle("no-scroll");
-            mobileMenu.classList.toggle("open");
-            overlay.classList.toggle("active");
-            mobileMenuBtn.classList.toggle("open"); // Toggle burger animation
+            mobileMenu.classList.add("open"); // Open menu
+
+            // Ensure a small delay before applying transitions
+            setTimeout(() => {
+                mobileMenu.style.right = "0";
+            }, 10);
+
+            document.body.classList.add("no-scroll");
         });
 
-        // Close menu when clicking on the overlay
-        overlay.addEventListener("click", function () {
-            closeMenu();
+        closeMenuBtn.addEventListener("click", function () {
+            mobileMenu.style.right = "-100%"; // Move off-screen
+
+            setTimeout(() => {
+                mobileMenu.classList.remove("open");
+            }, 300); // Allow time for the transition
+
+            document.body.classList.remove("no-scroll");
         });
 
         // Close menu when clicking outside
         document.addEventListener("click", function (e) {
-            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                closeMenu();
+            if (
+                !mobileMenu.contains(e.target) &&
+                !mobileMenuBtn.contains(e.target) &&
+                mobileMenu.classList.contains("open")
+            ) {
+                mobileMenu.style.right = "-100%"; // Move off-screen
+
+                setTimeout(() => {
+                    mobileMenu.classList.remove("open");
+                }, 300);
+
+                document.body.classList.remove("no-scroll");
             }
         });
-
-        function closeMenu() {
-            document.body.classList.remove("no-scroll");
-            mobileMenu.classList.remove("open");
-            overlay.classList.remove("active");
-            mobileMenuBtn.classList.remove("open");
-        }
     }
 });
