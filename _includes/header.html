@@ -1,13 +1,33 @@
 <head>
     <!-- FontAwesome Free CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .nav-item {
+            font-weight: normal; /* Default font weight */
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+            text-decoration: none;
+            color: white; /* Keep text color white */
+        }
+
+        /* Make only "ptrsmd" bold */
+        .nav-item strong {
+            font-weight: bold;
+        }
+
+        /* Change icon color */
+        .nav-item i {
+            color: #39FF14; /* Neon Green */
+        }
+    </style>
 </head>
 
 <header>
     <nav class="nav-container">
         <div class="nav-content">
             <a href="/" class="nav-item">
-                <i class="fa-solid fa-code"></i> ptrsmd
+                <i class="fa-solid fa-code"></i> <strong>ptrsmd</strong>
             </a>
             <a href="/projects/" class="nav-item">
                 <i class="fa-solid fa-fire"></i> Projects
