@@ -29,27 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     const closeMenuBtn = document.getElementById("close-menu-btn");
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 
     if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
         mobileMenuBtn.addEventListener("click", function (e) {
             e.stopPropagation();
-            mobileMenu.classList.add("open"); // Open menu
-
-            // Ensure a small delay before applying transitions
-            setTimeout(() => {
-                mobileMenu.style.right = "0";
-            }, 10);
-
+            mobileMenu.classList.add("open");
+            mobileMenuBtn.classList.add("hidden");  // Hide burger
+            closeMenuBtn.classList.remove("hidden"); // Show close button
             document.body.classList.add("no-scroll");
         });
 
         closeMenuBtn.addEventListener("click", function () {
-            mobileMenu.style.right = "-100%"; // Move off-screen
-
-            setTimeout(() => {
-                mobileMenu.classList.remove("open");
-            }, 300); // Allow time for the transition
-
+            mobileMenu.classList.remove("open");
+            mobileMenuBtn.classList.remove("hidden"); // Show burger
+            closeMenuBtn.classList.add("hidden"); // Hide close button
             document.body.classList.remove("no-scroll");
         });
 
