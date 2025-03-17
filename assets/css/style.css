@@ -115,14 +115,14 @@ body {
 /* Close Button (Now Uses the Burger as Reference) */
 .close-menu {
     position: absolute;  /* Same reference as the burger */
-    top: 0;              /* Aligns exactly with the burger */
+    top: 20px;              /* Aligns exactly with the burger */
     right: 50px;            /* Aligns exactly with the burger */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    padding: 20px;       /* Keeps spacing consistent */
+    padding: 0px;       /* Keeps spacing consistent */
     z-index: 1002;       /* Ensures visibility */
 }
 
