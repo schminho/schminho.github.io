@@ -112,17 +112,22 @@ body {
     font-size: 18px;
 }
 
-/* Close Button (Fixed, Same Position as Burger) */
+/* Close Button (Exactly Matches the Burger Button) */
 .close-menu {
-    position: fixed;  /* Same as burger menu */
-    top: 20px;        /* Same top value as burger */
-    right: 20px;      /* Same right value as burger */
+    position: fixed;  /* Same as burger button */
+    top: 20px;        /* Same top position */
+    right: 20px;      /* Same right position */
+    display: flex;    /* Ensures proper centering */
+    align-items: center;
+    justify-content: center;
+    width: 40px;      /* Match burger size */
+    height: 40px;     /* Match burger size */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    z-index: 1001; /* Ensures it stays above everything */
+    z-index: 1001; /* Ensures it's always above other elements */
 }
 
 /* Show menu on mobile */
