@@ -32,37 +32,28 @@ header {
     box-sizing: border-box; /* Consistent box model */
 }
 
-/* Navigation bar should be full width */
+/* Navigation bar full width */
 .nav-container {
     width: 100%;
     background-color: #003300;
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Center content */
+    justify-content: center;
+    padding: 0 20px; /* Align with page content */
 }
 
 /* Navigation content should match page width */
 .nav-content {
-    width: 80%; /* Matches content width */
+    width: 100%;
     max-width: 1920px; /* Align with main container */
-    display: flex;
-    justify-content: space-between; /* Home on left, Projects on right */
-    align-items: center;
-    padding: 10px 20px; /* Match content padding */
-}
-
-/* Updated navigation container */
-.nav-items {
     display: flex;
     justify-content: space-between; /* Home left, Projects right */
     align-items: center;
-    max-width: 80%; /* Align with content */
-    margin: 0 auto; /* Center within the viewport */
-    padding: 0 20px; /* Consistent padding */
+    padding: 10px 40px; /* Adjust padding to match content */
 }
 
-/* Ensure navigation links are inline */
-.nav-items a {
+/* Navigation links */
+.nav-content a {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 18px;
@@ -72,7 +63,7 @@ header {
 }
 
 /* Push 'Projects' to the right */
-.nav-items a:first-child {
+.nav-content a:first-child {
     margin-right: auto; /* Pushes "Projects" to the right */
 }
 
