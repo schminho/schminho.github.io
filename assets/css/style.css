@@ -112,18 +112,18 @@ body {
     font-size: 18px;
 }
 
-/* Close Button (Finally Matches the Burger Position) */
+/* Close Button (Uses the Same Parent as the Burger) */
 .close-menu {
-    position: fixed;  /* Same as burger */
-    top: 50px;        /* Same distance from top */
-    right: 50px;      /* Same distance from right */
+    position: absolute;  /* Use absolute to stay in the same reference */
+    top: 20px;           /* Same as burger */
+    right: 20px;         /* Same as burger */
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    padding: 20px;    /* Ensures proper spacing */
-    z-index: 1002;    /* Ensures it's above everything else */
+    padding: 20px;
+    z-index: 1002;       /* Ensure it's above everything else */
 }
 
 /* Show menu on mobile */
