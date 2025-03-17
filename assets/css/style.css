@@ -6,121 +6,138 @@ body {
     padding: 0;
     background-color: #EDEDED; /* Light gray background */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the container horizontally */
     height: 100vh;
 }
 
 /* General container styling */
 .container {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
+    width: 100%; /* Full width */
+    max-width: 1920px; /* Cap width at 1920px */
+    margin: 0 auto; /* Center container */
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensure consistent padding and border calculations */
 }
 
 /* Header styling */
 header {
-    background-color: #003300;
-    color: #FFFFFF;
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
     position: fixed;
-    width: 100%;
+    width: 100%; /* Full width for the header */
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
-    box-sizing: border-box;
+    padding: 1rem 0; /* Ensure height by adding padding */
+    box-sizing: border-box; /* Consistent box model */
 }
 
-/* Navigation bar */
+/* Navigation bar should be full width */
 .nav-container {
     width: 100%;
     background-color: #003300;
+    box-sizing: border-box;
     display: flex;
     justify-content: center; /* Center content */
-    box-sizing: border-box;
 }
 
-/* Navigation content */
+/* Navigation content should match page width */
 .nav-content {
-    width: 80%;
-    max-width: 1920px; /* Align with main content */
+    width: 80%; /* Matches content width */
+    max-width: 1920px; /* Align with main container */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Home on left, Projects on right */
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Match content padding */
 }
 
-/* Navigation links */
-.nav-content a {
+/* Updated navigation container */
+.nav-items {
+    display: flex;
+    justify-content: space-between; /* Home left, Projects right */
+    align-items: center;
+    max-width: 80%; /* Align with content */
+    margin: 0 auto; /* Center within the viewport */
+    padding: 0 20px; /* Consistent padding */
+}
+
+/* Ensure navigation links are inline */
+.nav-items a {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 18px;
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px; /* Spacing between icon and text */
 }
 
 /* Push 'Projects' to the right */
-.nav-content a:first-child {
-    margin-right: auto;
+.nav-items a:first-child {
+    margin-right: auto; /* Pushes "Projects" to the right */
 }
 
-/* Navigation link hover effect */
-.nav-content a::after {
-    content: "";
+/* Individual nav links */
+nav a {
+    color: #FFFFFF; /* White links */
+    text-decoration: none;
+    padding: 0.5rem 0; /* Adjust vertical padding */
+    position: relative; /* Needed for positioning the pseudo-element */
+}
+
+nav a::after {
+    content: ""; /* Creates the underline */
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #FFFFFF;
-    transition: width 0.3s ease;
+    left: 0; /* Start underline exactly below the text */
+    right: 0; /* Ensure no additional width */
+    bottom: 0; /* Position underline at the very bottom */
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background-color: #FFFFFF; /* White underline */
+    transition: width 0.3s ease; /* Smooth animation for underline */
 }
 
-.nav-content a:hover::after {
-    width: 100%;
+nav a:hover::after {
+    width: 100%; /* Expand underline to match the text's width */
 }
 
 /* Main content area */
 main {
-    flex: 1;
-    padding: 2rem 0;
-    margin-top: 80px; /* Height of the fixed header */
-    box-sizing: border-box;
+    flex: 1; /* Fill remaining space */
+    padding: 2rem 0; /* Adjust padding for content area */
+    margin-top: 80px; /* Height of the header */
+    box-sizing: border-box; /* Ensure padding and borders are calculated consistently */
 }
 
 /* Content inside the container */
 .content {
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
+    width: 80%; /* Constrain content to 80% */
+    margin: 0 auto; /* Align content with the nav items */
+    box-sizing: border-box; /* Consistent box model */
 }
 
-/* Links styling */
+/* Content Links Styling */
 main a {
-    color: #003300;
+    color: #003300; /* Dark green for links */
     text-decoration: none;
-    border-bottom: 1px solid #003300;
+    border-bottom: 1px solid #003300; /* Subtle underline */
     transition: color 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
 }
 
 main a:hover {
-    color: #FFFFFF;
-    background-color: #003300;
-    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF; /* White text on hover */
+    background-color: #003300; /* Dark green background for contrast */
+    border-bottom: 1px solid #FFFFFF; /* Matching underline */
 }
 
 /* Headings styling */
 h1, h2, h3 {
-    color: #003300;
+    color: #003300; /* Dark green for headings */
 }
 
-/* Buttons */
+/* Button styling */
 button {
-    background-color: #003300;
-    color: #FFFFFF;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
     border: none;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
@@ -129,133 +146,133 @@ button {
 }
 
 button:hover {
-    background-color: #002600;
-    transform: scale(1.05);
+    background-color: #002600; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Footer */
+/* Footer styling */
 footer {
-    background-color: #003300;
-    color: #FFFFFF;
+    background-color: #003300; /* Dark green background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 1rem;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Teaser Section */
 .teaser {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column; /* Default: Stack image and text vertically */
+    align-items: flex-start; /* Left-align content */
+    gap: 1rem; /* Spacing between elements */
     padding: 1.5rem;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin: 2rem 0;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: #FFFFFF; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    margin: 2rem 0; /* Spacing from other sections */
+    width: 100%; /* Default: Full width for small and medium viewports */
+    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
 }
 
 /* Teaser Image */
 .teaser-image {
-    width: 100%;
-    max-height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width within the teaser */
+    max-height: 200px; /* Constrain image height */
+    border-radius: 8px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensure the image scales nicely */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Teaser Content */
 .teaser-content {
-    flex: 1;
+    flex: 1; /* Allow content to grow */
 }
 
 /* Teaser Title */
 .teaser-title {
     font-size: 1.5rem;
-    color: #003300;
-    margin-bottom: 1rem;
+    color: #003300; /* Dark green */
+    margin: 0 0 1rem; /* Spacing below the title */
 }
 
 /* Teaser Description */
 .teaser-description {
     font-size: 1rem;
-    color: #555555;
-    margin-bottom: 1.5rem;
+    color: #555555; /* Subtle text color for the description */
+    margin: 0 0 1.5rem; /* Spacing below the description */
     line-height: 1.5;
 }
 
 /* Teaser Button */
 .teaser-button {
     display: inline-block;
-    background-color: #003300;
-    color: #FFFFFF;
+    background-color: #003300; /* Dark green */
+    color: #FFFFFF; /* White text */
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for the button */
 }
 
 .teaser-button:hover {
-    background-color: #002600;
+    background-color: #002600; /* Slightly darker green */
 }
 
 /* Responsive Layouts for Teaser */
 @media (min-width: 1024px) {
     .teaser {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        width: calc(100% * 2 / 3);
-        margin: 2rem 0;
+        flex-direction: row; /* Image on the left and text on the right */
+        align-items: center; /* Vertically align image and content */
+        gap: 2rem; /* Increase spacing between image and content */
+        width: calc(100% * 2 / 3); /* Teaser occupies 2/3 of the 100% content area */
+        margin: 2rem 0; /* Left-aligned within the content area */
     }
 
     .teaser-image {
-        width: 40%;
+        width: 40%; /* Constrain image to 40% of the teaser width */
     }
 
     .teaser-content {
-        width: 60%;
+        width: 60%; /* Allow content to take up the remaining 60% */
     }
 }
 
+
 @media (min-width: 768px) and (max-width: 1023px) {
     .teaser {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
+        flex-direction: row; /* Image on the left, text on the right */
+        align-items: center; /* Vertically align image and content */
+        gap: 2rem; /* Increase spacing between image and content */
+        width: 100%; /* Full width for the teaser */
     }
 
     .teaser-image {
-        width: 40%;
+        width: 40%; /* Constrain image to 40% of the teaser width */
     }
 
     .teaser-content {
-        width: 60%;
+        width: 60%; /* Allow content to take up the remaining 60% */
     }
 }
 
 @media (max-width: 768px) {
     .teaser {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: column; /* Stack image and text vertically */
+        width: 100%; /* Teaser takes up 100% of the content area */
     }
 
     .teaser-title {
-        font-size: 1.25rem;
+        font-size: 1.25rem; /* Slightly smaller title for better layout */
     }
 
     .teaser-description {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Adjust description size for smaller screens */
     }
 }
 
-/* Converter App */
 #converter-app h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -264,13 +281,13 @@ footer {
 
 #converter-app input,
 #converter-app input[type="range"] {
-    width: 100%;
-    margin: 0.5rem auto;
-    padding: 0.5rem;
+    width: calc(100% - 0rem); /* Full width minus padding */
+    margin: 0.5rem auto; /* Centered vertically with spacing */
+    padding: 0.5rem; /* Add padding inside the input fields */
     border: 1px solid #ddd;
     border-radius: 4px;
-    display: block;
-    box-sizing: border-box;
+    display: block; /* Ensure inputs stack vertically */
+    box-sizing: border-box; /* Include padding in the element's dimensions */
 }
 
 #slider-container {
@@ -278,8 +295,8 @@ footer {
 }
 
 #converter-app {
-    max-width: 600px;
-    margin: 2rem auto;
+    max-width: 600px; /* Constrain the app width */
+    margin: 2rem auto; /* Center the app */
     padding: 1rem;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -291,7 +308,7 @@ footer {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 500px;
+    max-width: 500px; /* Constrain the canvas width */
     margin: 1rem auto;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -300,11 +317,11 @@ footer {
 
 @media (max-width: 768px) {
     #converter-app {
-        max-width: 90%;
+        max-width: 90%; /* Use more of the screen for mobile */
     }
 
     #bell-curve {
-        max-width: 300px;
+        max-width: 300px; /* Smaller canvas for mobile */
     }
 }
 
