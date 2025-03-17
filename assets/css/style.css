@@ -115,8 +115,8 @@ body {
 /* Close Button (Uses the Same Parent as the Burger) */
 .close-menu {
     position: absolute;  /* Use absolute to stay in the same reference */
-    top: 20px;           /* Same as burger */
-    right: 20px;         /* Same as burger */
+    top: 0;           /* Same as burger */
+    right: 0;         /* Same as burger */
     background: none;
     border: none;
     font-size: 24px;
