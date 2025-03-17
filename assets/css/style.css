@@ -20,84 +20,110 @@ body {
     box-sizing: border-box; /* Ensure consistent padding and border calculations */
 }
 
-/* Header styling */
-header {
-    background-color: #003300; /* Dark green background */
-    color: #FFFFFF; /* White text */
+/* Header */
+.header {
     position: fixed;
-    width: 100%; /* Full width for the header */
+    top: 0;
+    width: 100%;
+    background: rgba(33, 33, 33, 0.8);
+    backdrop-filter: blur(5px);
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0; /* Ensure height by adding padding */
-    box-sizing: border-box; /* Consistent box model */
+    padding: 1rem 0;
 }
 
-/* Navigation bar should be full width */
+/* Navigation Bar */
 .nav-container {
     width: 100%;
-    background-color: #003300;
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Center content */
 }
 
-/* Navigation content should match page width */
 .nav-content {
-    width: 80%; /* Matches content width */
-    max-width: 1920px; /* Align with main container */
+    width: 80%;
+    max-width: 1920px;
     display: flex;
-    justify-content: space-between; /* Home on left, Projects on right */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Match content padding */
+    padding: 10px 20px;
 }
 
-/* Updated navigation container */
-.nav-items {
+/* Navigation Links */
+.nav-links {
     display: flex;
-    justify-content: space-between; /* Home left, Projects right */
-    align-items: center;
-    max-width: 80%; /* Align with content */
-    margin: 0 auto; /* Center within the viewport */
-    padding: 0 20px; /* Consistent padding */
+    gap: 20px;
 }
 
-/* Ensure navigation links are inline */
-.nav-items a {
-    color: #FFFFFF;
+.nav-item {
+    color: white;
     text-decoration: none;
     font-size: 18px;
     display: flex;
     align-items: center;
-    gap: 8px; /* Spacing between icon and text */
+    gap: 8px;
 }
 
-/* Push 'Projects' to the right */
-.nav-items a:first-child {
-    margin-right: auto; /* Pushes "Projects" to the right */
+.nav-item strong {
+    font-weight: bold;
 }
 
-/* Individual nav links */
-nav a {
-    color: #FFFFFF; /* White links */
-    text-decoration: none;
-    padding: 0.5rem 0; /* Adjust vertical padding */
-    position: relative; /* Needed for positioning the pseudo-element */
+.nav-item i {
+    color: #39FF14; /* Neon Green for Icons */
 }
 
-nav a::after {
-    content: ""; /* Creates the underline */
-    position: absolute;
-    left: 0; /* Start underline exactly below the text */
-    right: 0; /* Ensure no additional width */
-    bottom: 0; /* Position underline at the very bottom */
-    width: 0; /* Start with no width */
-    height: 2px; /* Height of the underline */
-    background-color: #FFFFFF; /* White underline */
-    transition: width 0.3s ease; /* Smooth animation for underline */
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
-nav a:hover::after {
-    width: 100%; /* Expand underline to match the text's width */
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgba(33, 33, 33, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 18px;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Show menu on mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu.open {
+        right: 0;
+    }
 }
 
 /* Main content area */
