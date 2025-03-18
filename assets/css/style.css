@@ -116,7 +116,7 @@ body {
 .close-menu {
     position: absolute;  /* Changed from fixed to absolute */
     top: 20px;           /* Keeps the same positioning */
-    right: 20px;         /* Ensures alignment */
+    right: 100px;         /* Ensures alignment */
     background: none;
     border: none;
     font-size: 24px;
@@ -125,8 +125,6 @@ body {
     padding: 20px;
     display: none;       /* Hides the close button until menu opens */
     z-index: 1002;
-    margin: 0;
-    transform: translateX(0);
 }
 
 /* Show menu on mobile */
