@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Brain, Rocket } from 'lucide-react';
+import { Briefcase, Users, Lightbulb, Code2 } from 'lucide-react';
 import { Contact } from '../components/Contact';
 
 export function AboutPage() {
@@ -12,7 +12,7 @@ export function AboutPage() {
             About Me
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Tech enthusiast, problem solver, and lifelong learner
+            Creative, highly dependable, and exceptionally organized Product Owner
           </p>
         </div>
       </section>
@@ -20,40 +20,43 @@ export function AboutPage() {
       {/* Content Sections */}
       <div className="container mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 mb-20">
+          {/* Who I Am */}
           <div>
             <h2 className="text-2xl font-semibold mb-6">Who I Am</h2>
             <p className="text-gray-300 mb-4">
-              I'm a passionate developer with a keen interest in creating elegant solutions
-              to complex problems. My journey in tech started with simple HTML websites and
-              has evolved into building full-stack applications.
+              I am a **Product Owner** and **business allrounder** with a strong sense of ownership.
+              Specializing in product and project management, I bring **a strategic mindset** combined
+              with an **eye for detail** to ensure effective execution.
             </p>
             <p className="text-gray-300">
-              When I'm not coding, you can find me exploring new technologies, contributing
-              to open-source projects, or sharing knowledge with the developer community.
+              With a passion for **technology and innovation**, I enjoy solving challenges, optimizing processes,
+              and leading cross-functional teams to deliver meaningful products.
             </p>
           </div>
+
+          {/* What I Do */}
           <div>
             <h2 className="text-2xl font-semibold mb-6">What I Do</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <Code2 className="text-purple-400" size={24} />
+                <Briefcase className="text-purple-400" size={24} />
                 <div>
-                  <h3 className="font-semibold mb-2">Full Stack Development</h3>
-                  <p className="text-gray-300">Building end-to-end solutions with modern technologies</p>
+                  <h3 className="font-semibold mb-2">Product & Project Management</h3>
+                  <p className="text-gray-300">Leading digital products from vision to execution</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Brain className="text-purple-400" size={24} />
+                <Users className="text-purple-400" size={24} />
                 <div>
-                  <h3 className="font-semibold mb-2">Problem Solving</h3>
-                  <p className="text-gray-300">Tackling complex challenges with creative solutions</p>
+                  <h3 className="font-semibold mb-2">Stakeholder Management</h3>
+                  <p className="text-gray-300">Aligning cross-functional teams for strategic success</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Rocket className="text-purple-400" size={24} />
+                <Lightbulb className="text-purple-400" size={24} />
                 <div>
-                  <h3 className="font-semibold mb-2">Innovation</h3>
-                  <p className="text-gray-300">Exploring new technologies and approaches</p>
+                  <h3 className="font-semibold mb-2">Innovation & Problem-Solving</h3>
+                  <p className="text-gray-300">Driving creative solutions in a fast-paced environment</p>
                 </div>
               </div>
             </div>
@@ -62,20 +65,42 @@ export function AboutPage() {
 
         {/* Skills Section */}
         <div className="bg-gray-800 rounded-2xl p-8 md:p-12 mb-20">
-          <h2 className="text-2xl font-semibold mb-8 text-center">Tech Stack</h2>
+          <h2 className="text-2xl font-semibold mb-8 text-center">Key Competencies</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              'JavaScript/TypeScript',
-              'React',
-              'Node.js',
-              'Python',
-              'SQL',
-              'Git',
-              'Docker',
-              'AWS'
+              'Effective Communicator',
+              'Leadership',
+              'Requirements Engineering',
+              'Tech-Savvy',
+              'Contract Law',
+              'Product Vision',
+              'Financial Acumen',
+              'SaaS',
+              'Strategic Thinking',
+              'Adobe Expert'
             ].map((skill) => (
               <div key={skill} className="text-center p-4 bg-gray-700/50 rounded-lg">
                 <span className="text-purple-300">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="bg-gray-800 rounded-2xl p-8 md:p-12 mb-20">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Tech Stack</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              'Python',
+              'React',
+              'Tailwind CSS',
+              'JavaScript',
+              'Render',
+              'Git',
+              'Flutter'
+            ].map((tech) => (
+              <div key={tech} className="text-center p-4 bg-gray-700/50 rounded-lg">
+                <span className="text-purple-300">{tech}</span>
               </div>
             ))}
           </div>
