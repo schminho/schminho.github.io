@@ -71,17 +71,24 @@ body {
     color: #39FF14; /* Neon Green for Icons */
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu Button (Hidden on Desktop) */
 .menu-toggle {
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
-    display: flex;
+    display: none; /* Hides it by default */
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease-in-out;
+}
+
+/* Show Burger Button on Mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
 }
 
 /* Transforms Burger into X */
