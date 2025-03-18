@@ -73,12 +73,26 @@ body {
 
 /* Mobile Menu Button */
 .menu-toggle {
-    display: none;
     background: none;
     border: none;
     font-size: 24px;
     color: white;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Transforms Burger into X */
+.menu-toggle.active i {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Change Icon from Burger to X */
+.menu-toggle.active i::before {
+    content: "\f00d"; /* FontAwesome "X" icon */
 }
 
 /* Mobile Menu (Full-Screen Dark Green with Fade-in) */
