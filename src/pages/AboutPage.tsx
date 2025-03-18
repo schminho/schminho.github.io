@@ -28,9 +28,7 @@ export function AboutPage() {
               <strong>product owner</strong>
               {" and "}
               <strong>business allrounder</strong>
-              {" with a strong sense of ownership. Specializing in product and project management, I bring "}
-              <strong>a strategic mindset</strong>
-              {" combined with an "}
+              {" with a strong sense of ownership. Specializing in product and project management, I bring a strategic mindset combined with an "}
               <strong>eye for detail</strong>
               {" to ensure effective execution."}
             </p>
