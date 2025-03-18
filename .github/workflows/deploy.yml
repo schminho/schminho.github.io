@@ -13,6 +13,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages  # ✅ REQUIRED to fix the error
 
     steps:
       - name: Checkout Repository
@@ -25,7 +27,7 @@ jobs:
           cache: "npm"
 
       - name: Install Dependencies
-        run: npm ci  # Faster than npm install
+        run: npm ci  # ✅ More stable than npm install
 
       - name: Build Vite App
         run: npm run build
@@ -33,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # ✅ This ensures `dist/` is uploaded for GitHub Pages
+          path: dist  # ✅ Ensures `dist/` is uploaded for GitHub Pages
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
