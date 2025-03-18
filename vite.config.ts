@@ -3,14 +3,16 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/schminho.github.io/", // 👈 Important: Match your GitHub repo name
+  base: "",  // ✅ Fix: GitHub Pages auto-detects the correct path
   build: {
+    outDir: "dist",
     assetsDir: "assets",
     rollupOptions: {
+      input: "index.html", // ✅ Ensures Vite processes `index.html` correctly
       output: {
-        entryFileNames: "assets/[name]-bundle.js", // 👈 Rename main JS files
-        chunkFileNames: "assets/[name]-chunk.js", // 👈 Rename chunked JS files
-        assetFileNames: "assets/[name].[ext]" // Keeps assets organized
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]"
       }
     }
   },
