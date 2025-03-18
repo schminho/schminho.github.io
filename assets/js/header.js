@@ -26,11 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Mobile Menu Toggle Functionality
-    const menuToggle = document.getElementById("menu-toggle");
+    const menuToggle = document.querySelector("#menu-toggle");
+    const icon = menuToggle.querySelector("i"); // Ensure we get the icon inside the button
     const mobileMenu = document.getElementById("mobile-menu");
 
     if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevents event conflicts
+            mobileMenu.classList.toggle("open");
+            menuToggle.classList.toggle("active");
+        
+            if (menuToggle.classList.contains("active")) {
+                icon.classList.replace("fa-bars", "fa-times"); // Change to X
+            } else {
+                icon.classList.replace("fa-times", "fa-bars"); // Change back to burger
+            }
+        
+            document.body.classList.toggle("no-scroll");
+        });
             mobileMenu.classList.toggle("open");
             menuToggle.classList.toggle("active");
             
