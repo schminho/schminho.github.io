@@ -8,9 +8,9 @@ export default defineConfig({
     assetsDir: "assets",
     rollupOptions: {
       output: {
-        entryFileNames: "assets/[name].js", // 👈 Ensures .js files are properly named
-        chunkFileNames: "assets/[name].js",
-        assetFileNames: "assets/[name].[ext]"
+        entryFileNames: "assets/[name]-bundle.js", // 👈 Rename main JS files
+        chunkFileNames: "assets/[name]-chunk.js", // 👈 Rename chunked JS files
+        assetFileNames: "assets/[name].[ext]" // Keeps assets organized
       }
     }
   },
