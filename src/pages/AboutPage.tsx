@@ -69,15 +69,13 @@ export function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               'Effective Communicator',
-              'Leadership',
-              'Requirements Engineering',
+              'Requirements Engineer',
               'Tech-Savvy',
-              'Contract Law',
               'Product Vision',
               'Financial Acumen',
               'SaaS',
-              'Strategic Thinking',
-              'Adobe Expert'
+              'Strategic Thinker',
+              'AEM Expert'
             ].map((skill) => (
               <div key={skill} className="text-center p-4 bg-gray-700/50 rounded-lg">
                 <span className="text-purple-300">{skill}</span>
