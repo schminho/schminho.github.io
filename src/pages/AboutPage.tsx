@@ -24,11 +24,11 @@ export function AboutPage() {
           <div>
             <h2 className="text-2xl font-semibold mb-6">Who I Am</h2>
             <p className="text-gray-300 mb-4">
-              I am a 
+              "I am a 
               <strong>product owner</strong>
                and **business allrounder** with a strong sense of ownership.
               Specializing in product and project management, I bring **a strategic mindset** combined
-              with an **eye for detail** to ensure effective execution.
+              with an **eye for detail** to ensure effective execution."
             </p>
             <p className="text-gray-300">
               With a passion for **technology and innovation**, I enjoy solving challenges, optimizing processes,
