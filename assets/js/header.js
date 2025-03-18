@@ -32,7 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener("click", function () {
             mobileMenu.classList.toggle("open");
-            menuToggle.classList.toggle("active"); // Triggers icon transition
+            menuToggle.classList.toggle("active");
+            
+            const icon = menuToggle.querySelector("i");
+            if (menuToggle.classList.contains("active")) {
+                icon.classList.replace("fa-bars", "fa-times"); // Swap burger for X
+            } else {
+                icon.classList.replace("fa-times", "fa-bars"); // Swap back to burger
+            }
+            
             document.body.classList.toggle("no-scroll");
         });
 
