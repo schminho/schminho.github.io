@@ -42,9 +42,6 @@ export function Hero() {
           {socialLinks.map((link) => (
             <SocialLink key={link.label} {...link} />
           ))}
-        </div>
-        <ScrollArrow targetId="projects" />
-      </div>
     </section>
   );
 }
