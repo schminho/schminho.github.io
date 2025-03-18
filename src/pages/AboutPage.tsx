@@ -37,7 +37,7 @@ export function AboutPage() {
             <p className="text-gray-300">
               {"With a passion for "}
               <strong>technology and innovation</strong>
-              {" , I enjoy solving challenges, optimizing processes, and leading cross-functional teams to deliver meaningful products."}
+              {", I enjoy solving challenges, optimizing processes, and leading cross-functional teams to deliver meaningful products."}
             </p>
           </div>
 
