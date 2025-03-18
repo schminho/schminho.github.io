@@ -26,38 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Mobile Menu Toggle Functionality
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenuBtn = document.getElementById("close-menu-btn");
 
-    if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-        // Open Mobile Menu
-        mobileMenuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            mobileMenu.classList.add("open");
-            mobileMenuBtn.style.display = "none";  // Hide burger button
-            closeMenuBtn.style.display = "block"; // Show close button
-            document.body.classList.add("no-scroll");
-        });
-
-        // Close Mobile Menu
-        closeMenuBtn.addEventListener("click", function () {
-            mobileMenu.classList.remove("open");
-            mobileMenuBtn.style.display = "block";  // Show burger button again
-            closeMenuBtn.style.display = "none";   // Hide close button
-            document.body.classList.remove("no-scroll");
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("open");
+            menuToggle.classList.toggle("active"); // Triggers icon transition
+            document.body.classList.toggle("no-scroll");
         });
 
         // Close menu when clicking outside
         document.addEventListener("click", function (e) {
-            if (
-                !mobileMenu.contains(e.target) &&
-                !mobileMenuBtn.contains(e.target) &&
-                mobileMenu.classList.contains("open")
-            ) {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && mobileMenu.classList.contains("open")) {
                 mobileMenu.classList.remove("open");
-                mobileMenuBtn.style.display = "block";
-                closeMenuBtn.style.display = "none";
+                menuToggle.classList.remove("active"); // Resets icon
                 document.body.classList.remove("no-scroll");
             }
         });
