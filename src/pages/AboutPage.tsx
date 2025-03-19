@@ -12,7 +12,7 @@ export function AboutPage() {
             About Me
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Creative, highly dependable, and exceptionally organized Product Owner
+          A techy business allrounder who is creative, highly dependable, and exceptionally organized.
           </p>
         </div>
       </section>
@@ -25,10 +25,10 @@ export function AboutPage() {
             <h2 className="text-2xl font-semibold mb-6">Who I Am</h2>
             <p className="text-gray-300 mb-4">
               {"I am a "}
-              <strong>product owner</strong>
+              <strong>tech enthusiast</strong>
               {" and "}
               <strong>business allrounder</strong>
-              {" with a strong sense of ownership. Specializing in product and project management, I bring a strategic mindset combined with an "}
+              {" with a strong sense of ownership. Specializing in requirements engineering and project management, I bring a strategic mindset combined with an "}
               <strong>eye for detail</strong>
               {" to ensure effective execution."}
             </p>
