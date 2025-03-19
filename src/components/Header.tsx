@@ -44,10 +44,10 @@ const navItems = [
     <header className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="#hero" className="flex items-center gap-2">
+          <a href="#hero" className="flex items-center gap-2">
             <Code2 className="text-purple-400" size={24} />
             <span className="text-xl font-bold text-white">ptrsmd</span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
