@@ -1,7 +1,18 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { Contact } from '../components/Contact';
-import { Briefcase, Users, Lightbulb, Code2, Workflow, LineChart } from 'lucide-react';
+import { Briefcase, Users, Lightbulb, Code2, Workflow, LineChart, MessageCircle, FileText, Monitor, Target, BarChart3, Globe, BookOpen } from 'lucide-react';
+
+const competencies = [
+  { icon: MessageCircle, label: "Effective Communicator" },
+  { icon: FileText, label: "Requirements Engineer" },
+  { icon: Code2, label: "Tech-Savvy" },
+  { icon: Target, label: "Product Vision" },
+  { icon: BarChart3, label: "Financial Acumen" },
+  { icon: Globe, label: "SaaS" },
+  { icon: Lightbulb, label: "Strategic Thinker" },
+  { icon: BookOpen, label: "AEM Expert" },
+];
 
 export function HomePage() {
   return (
@@ -75,26 +86,29 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Skills Section */}
-          <div className="bg-gray-800 rounded-2xl p-8 md:p-12 mb-20">
-            <h2 className="text-2xl font-semibold mb-8 text-center">Key Competencies</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                'Effective Communicator',
-                'Requirements Engineer',
-                'Tech-Savvy',
-                'Product Vision',
-                'Financial Acumen',
-                'SaaS',
-                'Strategic Thinker',
-                'AEM Expert'
-              ].map((skill) => (
-                <div key={skill} className="text-center p-4 bg-gray-700/50 rounded-lg">
-                  <span className="text-purple-300">{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Key Competencies - Card Layout */}
+<div className="py-16 bg-gray-900 p-8 md:p-12 mb-20">
+  <h2 className="text-2xl font-semibold mb-8 text-center text-white">Key Competencies</h2>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {competencies.map(({ icon: Icon, label }) => (
+      <div
+        key={label}
+        className="
+          p-6 rounded-lg text-white text-center flex flex-col items-center
+          bg-gradient-to-r from-purple-900 to-purple-700 transition-all duration-300 ease-in-out
+          hover:invert hover:scale-105
+        "
+      >
+        {/* Icon - Now changes instantly with everything else */}
+        <Icon className="mb-3 transition-all duration-300 ease-in-out" size={32} />
+
+        {/* Label - Text now changes instantly with the background */}
+        <span className="transition-all duration-300 ease-in-out">{label}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
 
           {/* Tech Stack */}
           <div className="bg-gray-800 rounded-2xl p-8 md:p-12 mb-20">
