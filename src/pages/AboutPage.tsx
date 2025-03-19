@@ -12,7 +12,7 @@ export function AboutPage() {
             About Me
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Creative, highly dependable, and exceptionally organized Product Owner
+            A techy business allrounder who is creative, highly dependable, and exceptionally organized
           </p>
         </div>
       </section>
