@@ -43,7 +43,7 @@ export function Hero() {
             <SocialLink key={link.label} {...link} />
           ))}
         </div>
-        <ScrollArrow targetId="about" />
+        <ScrollArrow targetId="about-me" />
       </div>
     </section>
   );
