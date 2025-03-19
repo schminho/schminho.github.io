@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 rounded-2xl bg-gradient-to-r from-purple-400 to-pink-500">
+    <section id="contact" className="py-10 bg-gradient-to-r from-purple-400 to-pink-500">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-8">
           <span className="bg-purple-900 text-transparent bg-clip-text">
