@@ -9,8 +9,8 @@ export function Header() {
   const location = useLocation();
 
   const navItems = [
-    { href: "#about", icon: User, label: "About" },
-    { href: "#contact", icon: Mail, label: "Contact" }
+    { href: "/about", icon: User, label: "About" },
+    { href: "/contact", icon: Mail, label: "Contact" }
   ];
 
   useEffect(() => {
