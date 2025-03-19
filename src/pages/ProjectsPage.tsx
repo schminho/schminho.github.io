@@ -12,7 +12,7 @@ export function ProjectsPage() {
             My Projects
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Exploring the intersection of technology and creativity through carefully crafted solutions
+            Exploring the intersection of technology and business
           </p>
         </div>
       </section>
