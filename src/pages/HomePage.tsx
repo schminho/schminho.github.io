@@ -119,11 +119,8 @@ export function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="h-screen flex items-center justify-center bg-gray-900 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Contact</h2>
-          <Contact />
-        </div>
+      <section id="contact">
+        <Contact />
       </section>
     </div>
   );
