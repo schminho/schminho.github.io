@@ -12,7 +12,7 @@ export function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="pt-16">
+      <section id="about" className="pt-16 scroll-mt-20">
         <div className="min-h-[60vh] flex items-center justify-center relative">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-gradient">
@@ -119,7 +119,7 @@ export function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
+      <section id="contact" className="scroll-mt-20">
         <Contact />
       </section>
     </div>
