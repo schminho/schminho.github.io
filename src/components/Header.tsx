@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Code2, User, Menu, X } from 'lucide-react';
+import { Code2, User, Mail, Menu, X } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { NavLink } from './NavLink';
 
@@ -10,7 +10,7 @@ export function Header() {
 
   const navItems = [
     { href: "#about", icon: User, label: "About" },
-    { href: "#contact", icon: Code2, label: "Projects" }
+    { href: "#contact", icon: Mail, label: "Contact" }
   ];
 
   useEffect(() => {
