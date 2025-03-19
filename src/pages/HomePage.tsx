@@ -7,7 +7,7 @@ export function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section id="hero">
+      <section id="top">
         <Hero />
       </section>
 
