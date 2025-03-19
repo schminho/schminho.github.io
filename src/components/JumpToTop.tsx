@@ -12,7 +12,7 @@ export function JumpToTop() {
       className="
         fixed bottom-6 right-6 p-3 rounded-full inline-block hover:opacity-80 transition-opacity bg-gradient-to-r from-purple-900/50 to-purple-700/50
         hover:bg-purple-900 transition-all duration-300
-        sm:hidden md:block
+        hidden md:block
       "
       aria-label="Scroll to Top"
     >
