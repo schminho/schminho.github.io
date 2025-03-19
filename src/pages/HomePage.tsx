@@ -1,7 +1,7 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { Contact } from '../components/Contact';
-import { Briefcase, Users, Lightbulb, Code2 } from 'lucide-react';
+import { Briefcase, Users, Lightbulb, Code2, Workflow, LineChart } from 'lucide-react';
 
 export function HomePage() {
   return (
@@ -51,24 +51,24 @@ export function HomePage() {
               <h2 className="text-2xl font-semibold mb-6">What I Do</h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <Briefcase className="text-purple-400" size={24} />
+                  <LineChart className="text-purple-400" size={24} />
                   <div>
                     <h3 className="font-semibold mb-2">Product & Project Management</h3>
-                    <p className="text-gray-300">Leading digital products from vision to execution</p>
+                    <p className="text-gray-300">Leading digital products from vision to execution, ensuring strategic alignment and seamless delivery.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Users className="text-purple-400" size={24} />
+                  <Code2 className="text-purple-400" size={24} />
                   <div>
-                    <h3 className="font-semibold mb-2">Stakeholder Management</h3>
-                    <p className="text-gray-300">Aligning cross-functional teams for strategic success</p>
+                    <h3 className="font-semibold mb-2">Consulting & Requirements Engineering</h3>
+                    <p className="text-gray-300">Bridging the gap between business and development - translating ideas into actionable solutions and ensuring clear communication across teams.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Lightbulb className="text-purple-400" size={24} />
                   <div>
                     <h3 className="font-semibold mb-2">Innovation & Problem-Solving</h3>
-                    <p className="text-gray-300">Driving creative solutions in a fast-paced environment</p>
+                    <p className="text-gray-300">Driving creative solutions with a structured approach - optimizing processes, solving complex challenges, and leveraging technology for efficiency.</p>
                   </div>
                 </div>
               </div>
