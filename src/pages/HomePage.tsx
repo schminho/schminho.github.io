@@ -114,7 +114,6 @@ export function HomePage() {
                   className="
                     p-6 rounded-lg text-gray-100 text-center flex flex-col items-center
                     bg-gradient-to-r from-purple-900 to-purple-700 transition-all duration-300 ease-in-out
-                    hover:invert hover:scale-105
                   "
                 >
                   {/* Icon - Now changes instantly with everything else */}
