@@ -7,15 +7,15 @@ export function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section id="top">
+      <section id="hero">
         <Hero />
       </section>
 
       {/* About Section */}
-      <section id="about" className="pt-16 scroll-mt-32 border border-red-500">
+      <section className="pt-16">
         <div className="min-h-[60vh] flex items-center justify-center relative">
           <div className="container mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-gradient">
+            <h1 id="about-me" className="scroll-mt-20 text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-gradient">
               About Me
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

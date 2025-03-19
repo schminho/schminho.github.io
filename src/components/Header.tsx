@@ -9,7 +9,7 @@ export function Header() {
   const location = useLocation();
 
 const navItems = [
-  { href: "#about", icon: User, label: "About" },
+  { href: "#about-me", icon: User, label: "About" },
   { href: "#contact", icon: Mail, label: "Contact" }
 ];
 
@@ -44,10 +44,17 @@ const navItems = [
     <header className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2">
-            <Code2 className="text-purple-400" size={24} />
-            <span className="text-xl font-bold text-white">ptrsmd</span>
-          </a>
+        <a
+          href="#hero"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent the URL from updating
+            document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="flex items-center gap-2"
+        >
+          <Code2 className="text-purple-400" size={24} />
+          <span className="text-xl font-bold text-white">ptrsmd</span>
+        </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
