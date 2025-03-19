@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Code2, User, Mail, Menu, X } from 'lucide-react';
+import { Code2, User, Fingerprint, Mail, Brain, Send, Rocket, Menu, X } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { NavLink } from './NavLink';
 
@@ -9,8 +9,9 @@ export function Header() {
   const location = useLocation();
 
 const navItems = [
-  { href: "#about-me", icon: User, label: "About" },
-  { href: "#contact", icon: Mail, label: "Contact" }
+  { href: "#about-me", icon: Fingerprint, label: "About" },
+  { href: "#expertise", icon: Rocket, label: "Expertise" },
+  { href: "#contact", icon: Send, label: "Contact" }
 ];
 
   useEffect(() => {

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { Contact } from '../components/Contact';
+import { ScrollArrow } from '../components/ScrollArrow';
+import { JumpToTop } from '../components/JumpToTop';
 import { Briefcase, Users, Lightbulb, Code2, Workflow, LineChart, MessageCircle, FileText, Monitor, Target, BarChart3, Globe, BookOpen } from 'lucide-react';
 
 const competencies = [
@@ -32,6 +34,7 @@ export function HomePage() {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               A techy business allrounder who is creative, highly dependable, and exceptionally organized
             </p>
+            <ScrollArrow targetId="expertise" />
           </div>
         </div>
 
@@ -86,8 +89,23 @@ export function HomePage() {
             </div>
           </div>
 
+          {/* Expertise Section */}
+          <section className="py-32">
+            <div className="container mx-auto px-6 text-center">
+              <h1 id="expertise" className="scroll-mt-20 text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-gradient">
+                Expertise
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Leveraging technology and strategy to deliver impactful solutions.
+              </p>
+              
+              {/* Scroll Down Component */}
+              <ScrollArrow targetId="contact" />
+            </div>
+          </section>
+
           {/* Key Competencies - Card Layout */}
-          <div className="py-16 bg-gray-900 p-8 md:p-12 mb-20">
+          <div className="py-16 bg-gray-900 mb-20">
             <h2 className="text-2xl font-semibold mb-8 text-center text-gray-100">Key Competencies</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {competencies.map(({ icon: Icon, label }) => (
@@ -135,6 +153,7 @@ export function HomePage() {
       <section id="contact" className="scroll-mt-20">
         <Contact />
       </section>
+      <JumpToTop /> {/* Always visible at bottom-right */}
     </div>
   );
 }
