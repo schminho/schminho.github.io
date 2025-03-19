@@ -33,9 +33,9 @@ export function NavLink({ href, icon: Icon, label, className = "flex items-cente
       <span>{label}</span>
     </a>
   ) : (
-    <Link to={href} onClick={onClick} className={className}>
+    <a href={href} onClick={onClick} className={className}>
       <Icon size={20} />
       <span>{label}</span>
-    </Link>
+    </a>
   );
 }
