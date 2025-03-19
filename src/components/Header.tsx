@@ -9,7 +9,6 @@ export function Header() {
   const location = useLocation();
 
 const navItems = [
-  { href: "#hero", icon: User, label: "Home" },
   { href: "#about", icon: User, label: "About" },
   { href: "#contact", icon: Mail, label: "Contact" }
 ];
