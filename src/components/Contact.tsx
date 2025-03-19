@@ -10,7 +10,7 @@ export function Contact() {
             Let's Connect
           </span>
         </h2>
-        <p className="text-gray-300 mb-8 max-w-xl mx-auto">
+        <p className="text-gray-100 mb-8 max-w-xl mx-auto">
           I'm always interested in hearing about new projects and opportunities.
         </p>
         <a href="mailto:peter@geiselnehmer.de"
