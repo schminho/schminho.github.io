@@ -10,7 +10,7 @@ export function Header() {
 
   const navItems = [
     { href: "#about", icon: User, label: "About" },
-    { href: "/projects", icon: Code2, label: "Projects" }
+    { href: "#contact", icon: Code2, label: "Projects" }
   ];
 
   useEffect(() => {
