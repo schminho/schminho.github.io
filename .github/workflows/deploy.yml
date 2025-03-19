@@ -1,41 +1,52 @@
 name: Deploy Vite App to GitHub Pages
 
+# ✅ Trigger this workflow only when pushing to `main` branch
 on:
   push:
     branches:
       - main  # Change if your default branch is different
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read      # Allows reading repo contents
+  pages: write        # ✅ REQUIRED to deploy to GitHub Pages
+  id-token: write     # ✅ REQUIRED for GitHub's secure Pages deployment
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     environment:
-      name: github-pages  # ✅ REQUIRED to fix the error
+      name: github-pages  # ✅ REQUIRED to properly deploy GitHub Pages
 
     steps:
+      # ✅ Step 1: Checkout repo
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # ✅ Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: "npm"
+          node-version: 18   # Ensure this matches your project setup
+          cache: "npm"        # Caches dependencies for faster builds
 
+      # ✅ Step 3: Install dependencies
       - name: Install Dependencies
-        run: npm ci  # ✅ More stable than npm install
+        run: npm ci  # ✅ More stable than `npm install`
 
+      # ✅ Step 4: Build Vite app (outputs to `dist/`)
       - name: Build Vite App
         run: npm run build
 
+      # ✅ Step 5: Upload build artifacts (GitHub Pages requires this)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # ✅ Ensures `dist/` is uploaded for GitHub Pages
+          path: dist  # ✅ Ensure this matches Vite’s output folder
 
+      # ✅ Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # ✅ Ensures proper authentication
+          force: true  # ✅ Overwrites previous deployments to avoid caching issues
