@@ -32,7 +32,7 @@ export function HomePage() {
               About Me
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              A techy business allrounder who is creative, highly dependable, and exceptionally organized
+            Techy, creative, and dependable business allrounder.
             </p>
             <ScrollArrow targetId="expertise" />
           </div>
@@ -96,7 +96,7 @@ export function HomePage() {
                 Expertise
               </h1>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Leveraging technology and strategy to deliver impactful solutions.
+                Merging tech and strategy for impactful solutions.
               </p>
               
               {/* Scroll Down Component */}
