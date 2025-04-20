@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import React from "react";
+import { ChevronDown } from "lucide-react";
 
 interface ScrollArrowProps {
   targetId: string;
@@ -11,8 +11,8 @@ export function ScrollArrow({ targetId }: ScrollArrowProps) {
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     }
   };

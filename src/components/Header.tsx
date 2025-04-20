@@ -1,39 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Code2, User, Fingerprint, Mail, Brain, Send, Rocket, Menu, X } from 'lucide-react';
-import { MobileMenu } from './MobileMenu';
-import { NavLink } from './NavLink';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Code2,
+  User,
+  Fingerprint,
+  Mail,
+  Brain,
+  Send,
+  Rocket,
+  Menu,
+  X,
+} from "lucide-react";
+import { MobileMenu } from "./MobileMenu";
+import { NavLink } from "./NavLink";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-const navItems = [
-  { href: "#about-me", icon: Fingerprint, label: "About" },
-  { href: "#expertise", icon: Rocket, label: "Expertise" },
-  { href: "#contact", icon: Send, label: "Contact" }
-];
+  const navItems = [
+    { href: "#about-me", icon: Fingerprint, label: "About" },
+    { href: "#expertise", icon: Rocket, label: "Expertise" },
+    { href: "#contact", icon: Send, label: "Contact" },
+  ];
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (isOpen && !target.closest('header')) {
+      if (isOpen && !target.closest("header")) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
   }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -45,17 +55,19 @@ const navItems = [
     <header className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault(); // Prevent the URL from updating
-            document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="flex items-center gap-2"
-        >
-          <Code2 className="text-purple-400" size={24} />
-          <span className="text-xl font-bold text-white">ptrsmd</span>
-        </a>
+          <a
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault(); // Prevent the URL from updating
+              document
+                .getElementById("hero")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="flex items-center gap-2"
+          >
+            <Code2 className="text-purple-400" size={24} />
+            <span className="text-xl font-bold text-white">ptrsmd</span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
@@ -75,16 +87,26 @@ const navItems = [
             aria-expanded={isOpen}
           >
             {isOpen ? (
-              <X size={24} className="transition-transform duration-200 rotate-90" />
+              <X
+                size={24}
+                className="transition-transform duration-200 rotate-90"
+              />
             ) : (
-              <Menu size={24} className="transition-transform duration-200 rotate-0" />
+              <Menu
+                size={24}
+                className="transition-transform duration-200 rotate-0"
+              />
             )}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <MobileMenu isOpen={isOpen} navItems={navItems} onNavigate={handleNavigate} />
+      <MobileMenu
+        isOpen={isOpen}
+        navItems={navItems}
+        onNavigate={handleNavigate}
+      />
     </header>
   );
 }
